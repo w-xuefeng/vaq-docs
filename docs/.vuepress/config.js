@@ -48,25 +48,12 @@ function getGuideSidebar(groupA, groupB) {
       collapsable: false,
       children: [
         '',
-        'getting-started',
-        'directory-structure',
-        'basic-config',
-        'assets',
-        'markdown',
-        'using-vue',
-        'i18n',
-        'deploy'
       ]
     },
     {
       title: groupB,
       collapsable: false,
-      children: [
-        'frontmatter',
-        'permalinks',
-        'markdown-slot',
-        'global-computed'
-      ]
+      children: []
     }
   ]
 }
