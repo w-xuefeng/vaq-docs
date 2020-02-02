@@ -1,4 +1,4 @@
 ---
-sidebarDepth: 3
+sidebarDepth: 1
 sidebar: auto
 ---
