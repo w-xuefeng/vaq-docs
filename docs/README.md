@@ -4,7 +4,7 @@ heroImage: /img/logo.png
 heroText: Vue APICloud Quickstart
 tagline: 🚀 the start up of using Vue.js & APICloud to develop mobile applications
 actionText: Get Started →
-actionLink: /zh/guide/
+actionLink: /guide/
 features:
   - title: NPM can be used
     details: The excellent components and development framework in NPM can be used to improve development efficiency.
