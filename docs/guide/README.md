@@ -2,7 +2,7 @@
 
 Vue-apicloud-QuickStart consists of two parts:
 
-- The first part is `ready.plugin`, which mainly solves the API problems, such as `api`, `apiready` does not exist in PC browser, and using Vue mixin to register a new life cycle `onReady` to the Vue instance, `onReady` will execute after `mounted`, and ensure that apiready has been executed; registering `apiEvent` to the Vue instance, which can quickly realize the listening of native events.
+- The first part is `ready.plugin`, which mainly solves the API problems, such as `api`, `apiready` does not exist in PC browser。 Using Vue mixin to register a new life cycle `onReady` to the Vue instance, `onReady` will execute after `mounted`, and ensure that apiready has been executed; registering `apiEvent` to the Vue instance, which can quickly realize the listening of native events.
 
 - The other part is `help.plugin`, which provides us with some common helper methods and mounts them on the Vue instance, which is convenient for us to call. For example, `this.$page.push({ Name: 'pagename' })` can be used directly for page Jump.
 
