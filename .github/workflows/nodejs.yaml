@@ -1,4 +1,4 @@
-name: docs deploy
+name: Docs Deploy
 
 on: 
   push:
@@ -11,8 +11,7 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - run: npm ci
-    - run: npm install vuepress
+    - run: npm install
     - run: npm run build
     - run: cp CNAME docs/.vuepress/dist/
     
