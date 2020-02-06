@@ -6,9 +6,5 @@ module.exports = [
   {
     text: 'Config Reference',
     link: '/config/'
-  },
-  {
-    text: 'Plugin',
-    link: '/plugin/'
   }
 ]

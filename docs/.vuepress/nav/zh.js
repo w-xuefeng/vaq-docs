@@ -6,9 +6,5 @@ module.exports = [
   {
     text: '配置',
     link: '/zh/config/'
-  },
-  {
-    text: '插件',
-    link: '/zh/plugin/'
   }
 ]

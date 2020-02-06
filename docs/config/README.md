@@ -69,3 +69,85 @@ As the unique identification of the current page, it cannot be repeated with oth
 - Default: `none`
 
 It is the relative path of the page file relative to the `src` directory. You do not need to add a file extension. For example, the path of `src/login/index.vue` is `login/index`
+
+## APICloud application configuration
+
+::: tip
+For the configuration items in `config.xml`, see the APICloud official documentation for details. The source of the following documents is [APICloud official documentation](https://docs.apicloud.com/Dev-Guide/app-config-manual)
+:::
+
+:::  warning Note
+The XML file must be encoded in `UTF-8`.
+:::
+
+### [Overview](https://docs.apicloud.com/Dev-Guide/app-config-manual#1)
+### [access](https://docs.apicloud.com/Dev-Guide/app-config-manual#3-1)
+### [Preference](https://docs.apicloud.com/Dev-Guide/app-config-manual#4)
+### [Feature](https://docs.apicloud.com/Dev-Guide/app-config-manual#15)
+### [Permission](https://docs.apicloud.com/Dev-Guide/app-config-manual#22)
+### [Meta-Data](https://docs.apicloud.com/Dev-Guide/app-config-manual#35-1)
+### [Intent-Filter](https://docs.apicloud.com/Dev-Guide/app-config-manual#35-2)
+### [Reference](https://docs.apicloud.com/Dev-Guide/app-config-manual#36)
+
+
+Complete `config.xml` file reference:
+
+``` xml
+<widget id="A12345678901"  version="0.0.1">
+    <name>API Example</name>
+    <description>
+        API Example App.
+    </description>
+    <author email="developer@apicloud.com" href="//www.apicloud.com">
+        APICloud.SIR
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="pageBounce" value="false" />
+    <preference name="appBackground" value="#000" />
+    <preference name="windowBackground" value="rgba(0,0,0,0.0)" />
+    <preference name="frameBackgroundColor" value="rgba(0,0,0,0.0)" />
+    <preference name="hScrollBarEnabled" value="true" />
+    <preference name="vScrollBarEnabled" value="true" />
+    <preference name="autoLaunch" value="true" />
+    <preference name="autoUpdate" value="true" />
+    <preference name="smartUpdate" value="false" />
+    <preference name="fullScreen" value="false" />
+    <preference name="statusBarAppearance" value="true" />
+    <preference name="softInputMode" value="resize"/>
+    <preference name="debug" value="true"/>
+    <permission name="readPhoneState" />
+    <permission name="call" />
+    <permission name="sms" />
+    <permission name="camera" />
+    <permission name="record" />
+    <permission name="location" />
+    <permission name="fileSystem" />
+    <permission name="internet" />
+    <permission name="bootCompleted" />
+    <permission name="hardware" />
+    <permission name="contact" />
+    <feature name="weiXin">
+        <param name="urlScheme" value="wx7779c7c063a9d4d9" />
+        <param name="apiKey" value="wx7779c7c063a9d4d9" />
+    </feature>
+    <feature name="sinaWeiBo">
+        <param name="urlScheme" value="wb1062272715" />
+        <param name="apiKey" value="1062272715" />
+    </feature>
+    <feature name="aliPay">
+         <param name="urlScheme" value="AliPayA00000000001" />
+    </feature>
+    <feature name="baiduLocation">
+        <param name="apiKey" value="fef72715gshjelke" />
+    </feature>
+    <feature name="baiduMap">
+        <param name="android_api_key" value="fef72715gshjelke" />
+        <param name="ios_api_key" value="fef72715gshjelke" />
+    </feature>
+    <feature name="qq">
+        <param name="urlScheme" value="tencent9c7c063a9d4d9" />
+        <param name="apiKey" value="9c7c063a9d4d9" />
+    </feature>
+</widget>
+```
