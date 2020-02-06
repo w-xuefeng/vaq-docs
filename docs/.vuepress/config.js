@@ -85,15 +85,13 @@ function getGuideSidebar(groupA, groupB) {
         'getting-started',
         'directory-structure',
         'assets',
-        'build-deploy'
+        'build-package'
       ]
     },
     {
       title: groupB,
       collapsable: false,
-      children: [
-        'global-computed'
-      ]
+      children: ['global-computed']
     }
   ]
 }
