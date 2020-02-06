@@ -68,7 +68,7 @@ As the unique identification of the current page, it cannot be repeated with oth
 - Type: `string`
 - Default: `none`
 
-It is the relative path of the page file relative to the `src` directory. You do not need to add a file extension. For example, the path of `src/login/index.vue` is `login/index`
+It is the relative path of the page file relative to the `src/pages` directory. You do not need to add a file extension. For example, the path of `src/pages/login/index.vue` is `login/index`
 
 ## APICloud application configuration
 

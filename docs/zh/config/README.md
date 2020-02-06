@@ -68,7 +68,7 @@ title 作为编译后 html 文件的 title，可为空，页面所展示的 titl
 - 类型: `string`
 - 默认值: `无`
 
-是页面文件相对于 src 目录的相对路径，不需要加文件扩展名，如 `src/login/index.vue` 的 path 为 `login/index`
+是页面文件相对于 `src/pages` 目录的相对路径，不需要加文件扩展名，如 `src/pages/login/index.vue` 的 path 为 `login/index`
 
 ## APICloud 应用配置
 
