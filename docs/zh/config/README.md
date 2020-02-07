@@ -203,3 +203,35 @@ title 作为编译后 html 文件的 title，可为空，页面所展示的 titl
     </feature>
 </widget>
 ```
+
+## WIFI 同步忽略文件目录配置
+
+::: tip
+详见 APICloud 官方文档[APICloud Studio WiFi真机同步和WiFi真机预览使用说明](https://docs.apicloud.com/Dev-Tools/wifi-debug)
+::: 
+
+- 自定义 WiFi 同步时忽略的文件、文件夹
+- 支持标准的 [`Glob`](https://github.com/isaacs/node-glob#glob-primer) 表达式。
+
+### 常用格式示例
+
+- 忽略某一类型的文件,如 `*.js.map` 文件：
+
+  ``` bash
+  **/*.js.map
+  ```
+
+- 忽略项目中所有某一名称的文件夹及其子文件(夹),如 `node_modules` 目录：
+
+  ``` bash
+  **/node_modules/**
+  ```
+
+- 忽略根目录中某一目录下的所有文件(夹), 如 `src` 目录：
+  ``` bash
+  src/**
+  ```
+- 基于自动化 webpack 等自动化构建工具常用的表达式：
+  ``` bash
+  {**/*.js.map,**/node_modules/**,src/**}
+  ```

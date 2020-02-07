@@ -12,7 +12,12 @@ module.exports = {
     }
   },
   themeConfig: {
+    repo: 'w-xuefeng/vue-apicloud-quickstart',
+    docsRepo: 'w-xuefeng/vaq-docs',
+    docsBranch: 'master',
+    docsDir: 'docs',
     editLinks: true,
+    smoothScroll: true,
     locales: {
       '/': {
         label: 'English',

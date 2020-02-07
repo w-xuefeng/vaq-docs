@@ -151,3 +151,34 @@ Complete `config.xml` file reference:
     </feature>
 </widget>
 ```
+## WIFI Sync ignore file directory configuration
+
+::: tip
+For details, please refer to the APICloud official documentation [APICloud Studio WiFi Real Machine Synchronization and WiFi Real Machine Preview Instructions](https://docs.apicloud.com/Dev-Tools/wifi-debug)
+::: 
+
+- Customize files and folders ignored during WiFi sync
+- Supports standard [`Glob`](https://github.com/isaacs/node-glob#glob-primer) expressions.
+
+### Examples of common formats
+
+- Ignore certain types of files, such as `* .js.map` files:
+
+  ``` bash
+  **/*.js.map
+  ```
+
+- Ignore all folders of a certain name in the project and their subfiles (folders), such as the `node_modules` directory:
+
+  ``` bash
+  **/node_modules/**
+  ```
+
+- Ignore all files (folders) in a directory in the root directory, such as the `src` directory:
+  ``` bash
+  src/**
+  ```
+- Based on expressions commonly used by automated build tools such as automated webpack:
+  ``` bash
+  {**/*.js.map,**/node_modules/**,src/**}
+  ```

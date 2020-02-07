@@ -109,6 +109,7 @@ module.exports = [
 │   ├── loginindex.js
 │   ├── homeindex.js
 │   └── homeweb.js
+├── index.html
 ├── indexindex.html
 ├── loginindex.html
 ├── homeindex.html
@@ -120,6 +121,6 @@ module.exports = [
 :::
 
 ::: tip 提示
-可以在浏览器中输入`/webpack-dev-server` 查看编译后的文件目录结构。
+可以在浏览器中输入 `/webpack-dev-server` 查看编译后的文件目录结构。其中 `index.html` 为`页面导航`，仅用于 PC 浏览器端调试页面，构建打包时将会忽略该页面。
 :::
 

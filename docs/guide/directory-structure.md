@@ -113,6 +113,7 @@ The corresponding compiled page file path is as follows:
 │   ├── loginindex.js
 │   ├── homeindex.js
 │   └── homeweb.js
+├── index.html
 ├── indexindex.html
 ├── loginindex.html
 ├── homeindex.html
@@ -124,7 +125,7 @@ The corresponding compiled page file path is as follows:
 :::
 
 ::: tip tip
-You can enter `/webpack-dev-server` in the browser to view the compiled file directory structure.
+You can enter `/webpack-dev-server` in the browser to view the compiled file directory structure. The page of `index.html` is `Page Navigation`，iit is only used for PC browser side debugging page, which will be ignored when building package.
 :::
 
 

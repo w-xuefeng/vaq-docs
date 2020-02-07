@@ -1,7 +1,5 @@
 # 介绍
 
-<Bit/>
-
 Vue-APICloud-Quickstart 由两部分组成：
 
 - 第一部分是 `ready.plugin`，它主要解决 `api` 的问题，例如 `api`, `apiready` 在 PC 浏览器不存在。 使用 Vue mixin 向 Vue 实例中注册新的生命周期 `onReady`, `onReady` 将在 `mounted` 之后执行，并且保证 `apiready` 已经执行；向 Vue 实例中注册 `apiEvent`, 可快速实现原生事件的监听。

@@ -60,14 +60,17 @@ vue add @w-xuefeng/apicloud
      config.xml
      index.html
      public/res/img/logo.png
+     src/assets/img/logo.png
      src/config/pages.js
      src/pages/home/index.vue
      src/pages/home/web.vue
      src/pages/index/index.vue
      src/pages/login/index.vue
+     vue.config.js
      .gitignore
      package.json
      public/index.html
+     src/assets/logo.png
      src/components/HelloWorld.vue
      src/main.js
      yarn.lock
