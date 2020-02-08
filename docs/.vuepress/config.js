@@ -96,7 +96,11 @@ function getGuideSidebar(groupA, groupB) {
     {
       title: groupB,
       collapsable: false,
-      children: ['global-computed']
+      children: [
+        'life-cycle',
+        'api-event',
+        'global-help'
+      ]
     }
   ]
 }
