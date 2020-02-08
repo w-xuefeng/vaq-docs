@@ -10,7 +10,7 @@ For example, initialize the `bMap` module as follows:
 <script>
 export default {
   name: 'demo',
-  data() {
+  data () {
     return {
       map: null
     }

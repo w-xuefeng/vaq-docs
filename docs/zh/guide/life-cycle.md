@@ -10,7 +10,7 @@ vue-apicloud-quickstart 由 `Vue` 强力驱动，因此支持 Vue 的所有生�
 <script>
 export default {
   name: 'demo',
-  data() {
+  data () {
     return {
       map: null
     }
