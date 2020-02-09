@@ -66,9 +66,14 @@ export default {
         // Error Handel
       }
     },
-    scrolltobottom () {
-      // loadMore TODO
-      this.$toast({ msg: 'Scrolled to the bottom' });
+    scrolltobottom: {
+      extra: {
+        threshold: 0
+      },
+      handle (/*ret, err*/) {
+        // loadMore TODO
+        this.$toast({ msg: '已滚动到底部' });
+      }
     }
   }
 }

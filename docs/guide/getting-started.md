@@ -39,6 +39,8 @@ The APICloud project ID is consistent with the project ID of the custom loader, 
 
 If port 8080 is already occupied by another program, you should enter a new unoccupied port number.
 After installation, if you want to modify the port number, you should modify the port number of `"serve": "vue-cli-service serve --port 8080"` in the `package.json`, and  `url: 'http://your IP address:8080/indexindex.html'` in the `index.html`.Then restart the project and perform a WiFi sync.
+
+Similarly, during WiFi debugging, if your local IP has changed, you need to modify the IP address of `url: 'http://your IP address:8080/indexindex.html'` in the `index.html`, and then perform a WiFi synchronization.
 :::
 
 

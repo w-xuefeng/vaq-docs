@@ -39,6 +39,8 @@ APICloud 项目 ID 与 自定义 Loader 的项目 ID 是一致的，否则无法
 
 若 8080 端口已经被其他程序占用，你应该输入一个新的未被占用的端口号。
 安装完成后，如果要修改端口号，你应该要修改 `package.json` 中`"serve": "vue-cli-service serve --port 8080"`的端口号 与 `index.html` 中 `url: 'http://你的IP地址:8080/indexindex.html'`中的端口号，然后重启项目并执行一次 WiFi 同步。
+
+同样的，在 WiFi 调试的时候，如果你的本地 IP 发生了变化的话，你需要修改 `index.html` 中 `url: 'http://你的IP地址:8080/indexindex.html'`中的 IP 地址，然后执行一次 WiFi 同步。
 :::
 
 ## 现有项目
