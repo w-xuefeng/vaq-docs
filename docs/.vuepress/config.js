@@ -110,6 +110,7 @@ function getGuideSidebar(groupA, groupB) {
       children: [
         'life-cycle',
         'api-event',
+        'network-request',
         'global-help'
       ]
     }
