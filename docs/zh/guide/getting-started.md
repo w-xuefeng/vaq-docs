@@ -9,13 +9,20 @@
 ``` bash
 # 假设你已经全局安装了最新版的 vue-cli
 # 使用 vue-cli 创建一个新的 vue 项目
-vue create project
+$ vue create project
 
 # 切换到项目目录下
-cd project
+$ cd project
 
 # 安装 vue-apicloud-quickstart
-vue add @w-xuefeng/apicloud
+$ vue add @w-xuefeng/apicloud
+```
+
+或者在项目目录下执行
+  
+``` bash
+$ npm i @w-xuefeng/apicloud     # 或者使用 yarn
+$ vue invoke @w-xuefeng/apicloud
 ```
 
 根据提示语句输入相关信息即可完成安装
@@ -49,7 +56,14 @@ APICloud 项目 ID 与 自定义 Loader 的项目 ID 是一致的，否则无法
 
 ``` bash
 # 安装
-vue add @w-xuefeng/apicloud
+$ vue add @w-xuefeng/apicloud
+```
+
+或者在项目目录下执行
+  
+``` bash
+$ npm i @w-xuefeng/apicloud     # 或者使用 yarn
+$ vue invoke @w-xuefeng/apicloud
 ```
 
 根据项目需要，自行决定是否保留更改。

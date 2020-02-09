@@ -9,13 +9,20 @@ vue-apicloud-quickstart requires Node.js >= 8.
 ``` bash
 # Assuming you have the latest version of vue-cli installed globally
 # Create a new vue project using vue-cli
-vue create project
+$ vue create project
 
 # Change to the project directory
-cd project
+$ cd project
 
 # install vue-apicloud-quickstart
-vue add @w-xuefeng/apicloud
+$ vue add @w-xuefeng/apicloud
+```
+
+Or execute the following command in the project directory
+  
+``` bash
+$ npm i @w-xuefeng/apicloud     # Or use yarn
+$ vue invoke @w-xuefeng/apicloud
 ```
 
 Enter the relevant information as prompted to complete the installation
@@ -49,8 +56,15 @@ Similarly, during WiFi debugging, if your local IP has changed, you need to modi
 If you want to use vue-apicloud-quickstart in an existing project, you should first submit your local changes, because after installing vue-apicloud-quickstart, it will make changes to the local project files. As above, enter the relevant information according to the prompt to complete the installation.
 
 ``` bash
-# 安装
-vue add @w-xuefeng/apicloud
+# installation
+$ vue add @w-xuefeng/apicloud
+```
+
+Or execute the following command in the project directory
+
+``` bash
+$ npm i @w-xuefeng/apicloud     # Or use yarn
+$ vue invoke @w-xuefeng/apicloud
 ```
 
 Decide whether to keep the changes according to the needs of the project.
