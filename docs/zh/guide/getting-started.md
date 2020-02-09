@@ -35,7 +35,7 @@ vue add @w-xuefeng/apicloud
 - 运行项目的端口号，默认 `8080`
 
 ::: warning 注意
-APICloud 项目 ID 与 自定义 Loader 的项目 ID 是一致的，否则无法进行 wifi 调试
+APICloud 项目 ID 与 自定义 Loader 的项目 ID 是一致的，否则无法进行 WiFi 调试
 
 若 8080 端口已经被其他程序占用，你应该输入一个新的未被占用的端口号。
 安装完成后，如果要修改端口号，你应该要修改 `package.json` 中`"serve": "vue-cli-service serve --port 8080"`的端口号 与 `index.html` 中 `url: 'http://你的IP地址:8080/indexindex.html'`中的端口号，然后重启项目并执行一次 WiFi 同步。
