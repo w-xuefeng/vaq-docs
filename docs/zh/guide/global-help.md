@@ -1,7 +1,7 @@
-# 全局助手方法
+# 全局助手方法和属性
 
 ## api
-- `Description`: 即 `window.api`, 在 `Vue` 实例中通过 `this.api` 使用，详情请查询[APICloud 官方文档 - API 对象](https://docs.apicloud.com/Client-API/api)
+- `描述`: 即 `window.api`, 在 `Vue` 实例中通过 `this.api` 使用，详情请查询[APICloud 官方文档 - API 对象](https://docs.apicloud.com/Client-API/api)
 
 ### [属性](https://docs.apicloud.com/Client-API/api#attr-content)
 ### [常量](https://docs.apicloud.com/Client-API/api#const-content)
@@ -15,8 +15,8 @@ this.api.appId
 ```
 
 ## $api
-- `type`: `object`
-- `Description`: APICloud 官方封装的 js 框架，在 `Vue` 实例中通过 `this.$api` 使用, 具体参数详情请查询[APICloud 官方文档 - APICloud 前端框架](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide), 所有方法如下：
+- `类型`: `object`
+- `描述`: APICloud 官方封装的 js 框架，在 `Vue` 实例中通过 `this.$api` 使用, 具体参数详情请查询[APICloud 官方文档 - APICloud 前端框架](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide), 所有方法如下：
 
 方法名 | 方法简介
 - | -
@@ -75,15 +75,15 @@ this.$api.setStorage('username', username)
 
 
 ## $req
-- `Description`: 网络请求，`PC` 调试时，使用的是 `axios`, wifi 调试和正式打包时使用的是 `api.ajax()` 方法
+- `描述`: 网络请求，`PC` 调试时，使用的是 `axios`, wifi 调试和正式打包时使用的是 `api.ajax()` 方法
 
 详情请查看[网络请求](./network-request)
 
 ## element.getRect()
 
-- `Param`: 无
-- `Return`: `DOMRect`
-- `Description`: 方法返回元素的大小及其相对于视口的位置, 是 `Element.getBoundingClientRect()` 的封装。
+- `参数`: 无
+- `返回值`: `DOMRect`
+- `描述`: 方法返回元素的大小及其相对于视口的位置, 是 `Element.getBoundingClientRect()` 的封装。
 
 `DOMRect`:
 
@@ -106,9 +106,9 @@ this.$api.dom('#id').getRect();
 
 ## element.computedStyle()
 
-- `Param`: 无
-- `Return`: `CSSStyleDeclaration `
-- `Description`: 返回一个对象，该对象在应用活动样式表并解析这些值可能包含的任何基本计算后报告元素的所有CSS属性的值。私有的CSS属性值可以通过对象提供的 API 或通过简单地使用 CSS 属性名称进行索引来访问。是 `window.getComputedStyle(element)` 的封装。
+- `参数`: 无
+- `返回值`: `CSSStyleDeclaration `
+- `描述`: 返回一个对象，该对象在应用活动样式表并解析这些值可能包含的任何基本计算后报告元素的所有CSS属性的值。私有的CSS属性值可以通过对象提供的 API 或通过简单地使用 CSS 属性名称进行索引来访问。是 `window.getComputedStyle(element)` 的封装。
 
 用例:
 
@@ -119,26 +119,41 @@ this.$api.dom('#id').computedStyle();
 
 ## $page
 
-- `Type`: `Object`
-- `Description`: 操作页面的方法对象，包含 `open`, `push`, `close`, `closeToWin`, `pageParam` 方法。
+- `类型`: `Object`
+- `描述`: 操作页面的方法对象，包含 `open`, `push`, `close`, `closeToWin`, `pageParam` 方法。
 
 ### open(url, options)
-- `Description`: 打开 `window` 页面, 若 `window` 已存在，则会把该 `window` 显示到最前面，同时若 `url` 有变化或者 `reload` 参数为 `true` 时，页面会重新加载。`api.openWin()` 方法的封装。
-- `Param`: 
-  - `url`: `string`, 必填项，页面地址，可以为本地文件路径，支持相对路径和绝对路径，以及 widget://、fs:// 等协议路径，也可以为远程地址。 当 `winOpts.data` 参数不为空时，`url` 将做为`baseUrl`，`winOpts.data` 中的 `html` 引用的资源文件根路径以该 `url` 为基础。
-  - `options`: `object`, 打开页面的参数，包含以下几项
-    - `name`: `string`, 可选项，要打开 `window` 的 `name`, 默认为 `win_${url}`, 
-    - `pageParam`: `any`, 可选项，向要打开 `window` 页面传递的数据，无默认值
-    - `winOpts`: `object`, 可选项，要打开页面 `window` 的所有参数，详见[官方文档](https://docs.apicloud.com/Client-API/api#33), 内部参数可覆盖外部参数
-    - `animation`: `object`, 可选项，页面打开的动画效果， 详见[官方文档](https://docs.apicloud.com/Client-API/api#33)
-      - `type`: 动画类型
-      - `subType`: 动画子类型
-      - `duration`: `number`, 动画过渡时间，默认300毫秒
+- `描述`: 打开 `window` 页面, 若 `window` 已存在，则会把该 `window` 显示到最前面，同时若 `url` 有变化或者 `reload` 参数为 `true` 时，页面会重新加载。`api.openWin()` 方法的封装。
+- `参数`: 
+  - **`url`**:
+    + `类型`: `string`
+    + `是否必须`: 是
+    + `描述`: 页面地址，可以为本地文件路径，支持相对路径和绝对路径，以及 widget://、fs:// 等协议路径，也可以为远程地址。 当 `winOpts.data` 参数不为空时，`url` 将做为`baseUrl`，`winOpts.data` 中的 `html` 引用的资源文件根路径以该 `url` 为基础。
+  - **`options`**:
+    + `类型`:`object`,
+    + `是否必须`: 否
+    + `描述`: 打开页面的参数，包含以下几项
+
+    | 可选项 | 类型 | 是否必须 | 描述
+    | - | - | - | -
+    | name | `string` | `false` | 可选项，要打开 `window` 的 `name`, 默认为 `win_${url}`, 
+    | pageParam | `any` | `false` | 可选项，向要打开 `window` 页面传递的数据，无默认值
+    | winOpts | `object` | `false` | 可选项，要打开页面 `window` 的所有参数，详见[官方文档](https://docs.apicloud.com/Client-API/api#33), 内部参数可覆盖外部参数
+    | animation | `object` | `false` | 可选项，页面打开的动画效果， 详见[官方文档](https://docs.apicloud.com/Client-API/api#33)
+
+    `animation` 的内部参数如下:
+    
+    | 可选项 | 类型 | 是否必须 | 描述
+    | - | - | - | -
+    | `type` | `string` | `false` | 动画类型
+    | `subType` | `string` | `false` | 动画子类型
+    | `duration` | `number` | `false` | 动画过渡时间，默认300毫秒
+
     ``` js
     {
-        type: "none",                //动画类型（详见动画类型常量）
-        subType: "from_right",       //动画子类型（详见动画子类型常量）
-        duration: 300                //动画过渡时间，默认300毫秒
+        type: "none",                // 动画类型（详见动画类型常量）
+        subType: "from_right",       // 动画子类型（详见动画子类型常量）
+        duration: 300                // 动画过渡时间，默认300毫秒
     }
 
     type 取值范围：
@@ -195,11 +210,19 @@ export default {
 ```
 
 ### push(urlOrOptions)
-- `Description`: 打开一个新的 `window` 页面, `open` 方法的封装
-- `Param`: 
-  - `urlOrOptions`: `string | object`, 必填项，打开页面的参数，如果是 `string` 类型，则当作 `url` 直接传递给 `open()` 方法， 如果是 `object`, 则包含以下几项
-    - `name`: `string`, 可选项，要打开 `window` 的 `name`, 这里可以填写 `src/config/pages.js` 里面配置的页面的 `name`，可直接打开该页面
-    - 其余参数与 `open()` 方法一样
+- `描述`: 打开一个新的 `window` 页面, `open` 方法的封装
+- `参数`: 
+  - **`urlOrOptions`**:
+    + `类型`: `string | object`
+    + `是否必须`: 是
+    + `描述`: 打开页面的参数，如果是 `string` 类型，则当作 `url` 直接传递给 `open()` 方法， 如果是 `object`, 则包含以下几项
+
+    | 可选项 | 类型 | 是否必须 | 描述
+    | - | - | - | -
+    | name | `string` | `false` | 要打开 `window` 的 `name`, 这里可以填写 `src/config/pages.js` 里面配置的页面的 `name`，可直接打开该页面
+    | pageParam | `any` | `false` | 可选项，向要打开 `window` 页面传递的数据，无默认值
+    | winOpts | `object` | `false` | 可选项，要打开页面 `window` 的所有参数，详见[官方文档](https://docs.apicloud.com/Client-API/api#33), 内部参数可覆盖外部参数
+    | animation | `object` | `false` | 可选项，页面打开的动画效果， 详见[官方文档](https://docs.apicloud.com/Client-API/api#33), 与 `open()` 方法参数 `options.animation` 相同
 
 用例:
 
@@ -226,8 +249,8 @@ export default {
 ```
 
 ### close()
-- `Description`: 关闭当前 `window` 页面，`api.closeWin()` 方法的封装。
-- `Param`: 无
+- `描述`: 关闭当前 `window` 页面，`api.closeWin()` 方法的封装。
+- `参数`: 无
 
 用例:
 
@@ -245,11 +268,17 @@ export default {
 ```
 
 ### closeToWin(options)
-- `Description`: 关闭到指定 window，最上面显示的 window 到指定 name 的 window 间的所有 window 都会被关闭，`api.closeToWin()` 方法的封装。
-- `Param`: 
-  - `options`: `object`
-    - `name`： `string`, window 名字
-    - `animation`：`object` （可选项）动画参数，不传时使用默认动画, 详见 `open()` 方法的 `animation` 参数
+- `描述`: 关闭到指定 window，最上面显示的 window 到指定 name 的 window 间的所有 window 都会被关闭，`api.closeToWin()` 方法的封装。
+- `参数`: 
+  - **`options`**:
+    + `类型`: `object`
+    + `是否必须`：是
+    + `描述`: 关闭到指定 window 的可选项， 包含以下几项
+
+    | 可选项 | 类型 | 是否必须 | 描述
+    | - | - | - | -
+    | name | `string` | `true` | 指定 window 的名字
+    | animation | `object` | `false` | 可选项，页面打开的动画效果， 详见[官方文档](https://docs.apicloud.com/Client-API/api#33), 与 `open()` 方法参数 `options.animation` 相同
 
 用例:
 
@@ -267,9 +296,9 @@ export default {
 ```
 
 ### pageParam()
-- `Description`: 用于获取页面间传递的参数值，为 `api.openWin()`、`api.openFrame()`、`$page.open()`、`$page.push()`、`$frame.open()` 等方法中的 `pageParam` 参数对应值， `api.pageParam` 属性的封装。
-- `Param`: 无
-- `Return`: `any`
+- `描述`: 用于获取页面间传递的参数值，为 `api.openWin()`、`api.openFrame()`、`$page.open()`、`$page.push()`、`$frame.open()` 等方法中的 `pageParam` 参数对应值， `api.pageParam` 属性的封装。
+- `参数`: 无
+- `返回值`: `any`
 
 用例:
 
@@ -295,15 +324,21 @@ export default {
 ```
 
 ## $frame
-- `Type`: `Object`
-- `Description`: 操作 `Frame` 的方法对象，包含 `open()` 方法。
+- `类型`: `Object`
+- `描述`: 操作 `Frame` 的方法对象，包含 `open()` 方法。
 
 ### open(options)
-- `Description`: 打开 frame, 若 frame 已存在，则会把该窗口显示到最前面并显示，如果 url 和之前的 url 有变化，或者 reload 为 true 时，页面会刷新.此方法对 frameGroup 里面的 frame 不起作用，`api.openFrame()` 方法的封装
-- `Param`: 
-  - `url`: `string`, 必填项，打开页面的路径，支持相对路径，绝对路径，网络协议 `http`， `https`， 相对协议 `//`
-  - `options`: `object`, 打开 `frame` 的参数，详见[官方文档](https://docs.apicloud.com/Client-API/api#27)
-  
+- `描述`: 打开 frame, 若 frame 已存在，则会把该窗口显示到最前面并显示，如果 url 和之前的 url 有变化，或者 reload 为 true 时，页面会刷新.此方法对 frameGroup 里面的 frame 不起作用，`api.openFrame()` 方法的封装
+- `参数`: 
+  - **`url`**:
+    + `类型`: `string`
+    + `是否必须`: 是
+    + `描述`: 打开页面的路径，支持相对路径，绝对路径，网络协议 `http`， `https`， 相对协议 `//`
+  - **`options`**:
+    + `类型`: `object`
+    + `是否必须`: 否
+    + `描述`: 打开 `frame` 的参数，详见[官方文档](https://docs.apicloud.com/Client-API/api#27)
+
 用例:
 
 ``` vue
@@ -332,20 +367,27 @@ export default {
 </script>
 ```
 ## $toast(options)
-- `Description`: 弹出一个定时自动关闭的提示框, `api.toast()` 方法的封装
-- `Param`: 
-  - `options`: `object`
-    - `msg`: `string`, 提示消息
-    - `duration`: `number`,（可选项）持续时长，单位：毫秒, 默认值 3000
-    - `location`：`string`,（可选项）弹出位置，顶部、中间或底部
+- `描述`: 弹出一个定时自动关闭的提示框, `api.toast()` 方法的封装
+- `参数`: 
+  - **`options`**:
+    + `类型`: `object`
+    + `是否必须`: `true`
+    + `描述`: 可选项，包含以下几项
 
-    取值范围:
+    | 可选项 | 类型 | 是否必须 | 描述
+    | - | - | - | -
+    | msg | `string` | `true` | 提示消息
+    | duration | `number` | `false` | （可选项）持续时长，单位：毫秒, 默认值 3000
+    | location | `string` | `false` | （可选项）弹出位置，顶部、中间或底部, 默认 `bottom`
+
+    `location` 的取值范围:
 
     ``` js
     top         // 顶部
     middle      // 中间
     bottom      // 底部
     ```
+
 用例:
 
 ``` vue
@@ -360,7 +402,7 @@ export default {
 ```
 
 ## $pagesInfo
-- `Description`: 获取页面配置信息， 以数组的形式返回
+- `描述`: 获取页面配置信息， 以数组的形式返回
 
 用例：
 
@@ -398,9 +440,9 @@ console.log(this.$pagesInfo)
 ```
 
 ## $getPageMap()
-- `Description`: 获取页面配置信息, 以对象的形式返回，页面的 `key` 即配置的页面的 `name`
-- `Param`: 无
-- `Return`: `object`
+- `描述`: 获取页面配置信息, 以对象的形式返回，页面的 `key` 即配置的页面的 `name`
+- `参数`: 无
+- `返回值`: `object`
 
 用例：
 
@@ -439,8 +481,8 @@ console.log(this.$getPageMap())
 ```
 
 ## $bindKeyBackExitApp()
-- `Description`: 绑定 `keyback` 为连续按下 2 次退出应用
-- `Param`: 无
+- `描述`: 绑定 `keyback` 为连续按下 2 次退出应用
+- `参数`: 无
 
 用例:
 
@@ -456,10 +498,15 @@ export default {
 ```
 
 ## $n2p(name)
-- `Description`: 将页面的 `name` 转换为页面的 `htmlPath`
-- `Param`: 
-  - `name`: `string`, 必填项， 为 `src/config/pages.js` 文件中配置的页面的 `name`
-- `Return` : `string`, 页面的 `htmlPath`
+- `描述`: 将页面的 `name` 转换为页面的 `htmlPath`
+- `参数`: 
+  - **`name`**:
+    + `类型`: `string`
+    + `是否必须`：是
+    + `描述`: `src/config/pages.js` 文件中配置的页面的 `name`
+- `返回值` : 
+  + `类型`: `string`
+  + `描述`: 页面的 `htmlPath`
 
 用例:
 
@@ -477,9 +524,9 @@ export default {
 ```
 
 ## $getSafeArea()
-- `Description`: 页面不被其它内容（如状态栏）遮住的区域，`JSON` 对象，通过 `safeArea` 能够知道当前页面哪些地方被遮住，从而做出相应的调整，保证页面重要元素不被遮挡住，比如应对顶部 `header` 被状态栏遮住一部分，可以为 `header` 增加一个 `paddingTop，``api.safeArea` 属性的封装
-- `Param`: 无
-- `Return` : `object`
+- `描述`: 页面不被其它内容（如状态栏）遮住的区域，`JSON` 对象，通过 `safeArea` 能够知道当前页面哪些地方被遮住，从而做出相应的调整，保证页面重要元素不被遮挡住，比如应对顶部 `header` 被状态栏遮住一部分，可以为 `header` 增加一个 `paddingTop`, 是 `api.safeArea` 属性的封装
+- `参数`: 无
+- `返回值` : `object`
 ``` js
 {
     top:       // 安全区域上边缘，对于沉浸式下window中该值通常为状态栏高度，全屏或非沉浸式下为0（iPhone X竖屏时全屏状态下也为44）
@@ -509,9 +556,9 @@ export default {
 ```
 
 ## $getWinSize()
-- `Description`: 获取屏幕尺寸，包括 `winHeight`, `winWidth`, 是`api.winHeight`、`api.winWidth` 属性的封装。
-- `Param`: 无
-- `Return` : `object`
+- `描述`: 获取屏幕尺寸，包括 `winHeight`, `winWidth`, 是`api.winHeight`、`api.winWidth` 属性的封装。
+- `参数`: 无
+- `返回值` : `object`
 
 ``` js
 {
@@ -528,50 +575,29 @@ const { winHeight, winWidth } = this.$getWinSize()
 ```
 
 ## $setPullDownRefresh(callback，options)
-- `Description`: 显示默认下拉刷新组件，使用默认下拉刷新组件时会自动重新设置页面的弹动属性。`api.setRefreshHeaderInfo()` 方法的封装。
-- `Param`: 
-  - `callback`: `Function`, 必填项，处于下拉刷新状态的回调
-  - `options`: `object`, 可选项
-    - `visible`：
-      - 类型：布尔
-      - 默认值：`true`
-      - 描述：（可选项）是否可见
-    - `bgColor`：
-      - 类型：字符串
-      - 默认值：当 `defaultRefreshHeader` 为 `pull` 时为 `rgba(187, 236, 153, 1.0)`，为 `swipe `时为 `#fff`
-      - 描述：（可选项）背景颜色    
-    - `pathColor`：
-      - 类型：字符串
-      - 默认值：`#0F9D58`
-      - 描述：（可选项）进度条的颜色，`defaultRefreshHeader` 为 `swipe` 时生效。
-    - `loadingImg`：
-      - 类型：字符串
-      - 默认值：旋转箭头图片
-      - 描述：（可选项）上拉下拉时的图片地址，`defaultRefreshHeader` 为 `pull` 时生效。
-    - `textColor`：
-      - 类型：字符串
-      - 默认值：`rgba(109, 128, 153, 1.0)`
-      - 描述：（可选项）文本颜色，`defaultRefreshHeader` 为 `pull`时生效。
-    - `textDown`：
-      - 类型：字符串
-      - 默认值：`下拉可以刷新...`
-      - 描述：（可选项）下拉文字描述，`defaultRefreshHeader` 为 `pull` 时生效。
-    - `textUp`：
-      - 类型：字符串
-      - 默认值：`松开可以刷新...`
-      - 描述：（可选项）松开时文字描述，`defaultRefreshHeader` 为 `pull` 时生效。
-    - `textLoading`：
-      - 类型：字符串
-      - 默认值：`加载中...`
-      - 描述：（可选项）加载状态文字描述，`defaultRefreshHeader` 为 `pull` 时生效。
-    - `textTime`：
-      - 类型：字符串
-      - 默认值：`最后更新加日期时间`
-      - 描述：（可选项）更新时间文字描述，`defaultRefreshHeader` 为 `pull` 时生效。
-    - `showTime`：
-      - 类型：布尔
-      - 默认值：`true`
-      - 描述：（可选项）是否显示更新时间，`defaultRefreshHeader` 为 `pull` 时生效。
+- `描述`: 显示默认下拉刷新组件，使用默认下拉刷新组件时会自动重新设置页面的弹动属性。`api.setRefreshHeaderInfo()` 方法的封装。
+- `参数`: 
+  - **`callback`**:
+    + `类型`：`Function`
+    + `是否必须`: 是
+    + `描述`: 处于下拉刷新状态的回调
+  - `options`: `object`
+    + `类型`：`object`
+    + `是否必须`: 否
+    + `描述`: 下拉刷新的可选项，包含以下几项
+
+    | 可选项 | 类型 | 默认值 | 描述
+    | - | - | - | -
+    | visible | `boolean` | `true` | 是否可见
+    | bgColor | `string`| 当 `defaultRefreshHeader` 为 `pull` 时为 `rgba(187, 236, 153, 1.0)`，为 `swipe `时为 `#fff` | 背景颜色    
+    | pathColor | `string` | `#0F9D58` | 进度条的颜色，`defaultRefreshHeader` 为 `swipe` 时生效。
+    | loadingImg | `string`  | 旋转箭头图片 | 上拉下拉时的图片地址，`defaultRefreshHeader` 为 `pull` 时生效。
+    | textColor | `string` | `rgba(109, 128, 153, 1.0)` | `defaultRefreshHeader` 为 `pull`时生效。
+    | textDown | `string` | `下拉可以刷新...` | 下拉文字描述，`defaultRefreshHeader` 为 `pull` 时生效。
+    | textUp | `string`  | `松开可以刷新...` | 松开时文字描述，`defaultRefreshHeader` 为 `pull` 时生效。
+    | textLoading | `string` | 默认值：`加载中...` | 加载状态文字描述，`defaultRefreshHeader` 为 `pull` 时生效。
+    | textTime | `string` | `最后更新加日期时间` | 更新时间文字描述，`defaultRefreshHeader` 为 `pull` 时生效。
+    | showTime | `boolean` | `true` | 是否显示更新时间，`defaultRefreshHeader` 为 `pull` 时生效。
 
 用例:
 
@@ -595,7 +621,8 @@ export default {
   onReady() {
     this.$setPullDownRefresh(() => {
       // TODO
-      // 在这里从服务器加载数据，加载完成后调用 this.api.refreshHeaderLoadDone() 方法恢复组件到默认状态
+      // 在这里从服务器加载数据，
+      // 加载完成后调用 this.api.refreshHeaderLoadDone() 方法恢复组件到默认状态
       this.initData();
     })
   }

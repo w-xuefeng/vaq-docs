@@ -1,14 +1,14 @@
-# Global Help Methods
+# Global Help Methods and Properties
 
 ## api
-- `Description`: 即 `window.api`, 在 `Vue` 实例中通过 `this.api` 使用，详情请查询[APICloud 官方文档 - API 对象](https://docs.apicloud.com/Client-API/api)
+- `Description`: That is, `window.api`, which is used by` this.api` in the `Vue` instance. For details, please refer to [APICloud Official Documentation - API Object](https://docs.apicloud.com/Client-API/api)
 
-### [属性](https://docs.apicloud.com/Client-API/api#attr-content)
-### [常量](https://docs.apicloud.com/Client-API/api#const-content)
-### [事件](https://docs.apicloud.com/Client-API/api#evt-content)
-### [方法](https://docs.apicloud.com/Client-API/api#method-content)
+### [Attributes](https://docs.apicloud.com/Client-API/api#attr-content)
+### [Constant](https://docs.apicloud.com/Client-API/api#const-content)
+### [Event](https://docs.apicloud.com/Client-API/api#evt-content)
+### [Method](https://docs.apicloud.com/Client-API/api#method-content)
 
-用例:
+For example:
 
 ``` js
 this.api.appId
@@ -16,89 +16,87 @@ this.api.appId
 
 ## $api
 - `type`: `object`
-- `Description`: APICloud 官方封装的 js 框架，在 `Vue` 实例中通过 `this.$api` 使用, 具体参数详情请查询[APICloud 官方文档 - APICloud 前端框架](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide), 所有方法如下：
+- `Description`: APICloud official packaged js framework, used in `Vue` instance via `this.$api`, please refer to [APICloud official documentation - APICloud front-end framework](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide) for specific parameter details, All methods are as follows:
 
-方法名 | 方法简介
+Method | Description
 - | -
-[.trim()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#1) | 去掉字符串首尾空格 |
-[.trimAll()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#2) | 去掉字符串所有空格 |
-[.isArray()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#3) | 判断对象是否为数组 |
-[.addEvt()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#4) | 为DOM元素绑定事件 |
-[.rmEvt()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#5) | 移除DOM元素绑定的事件 |
-[.one()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#6) | 为DOM元素绑定事件，事件只执行一次 |
-[.dom()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#7) | 选择首个匹配的DOM元素 |
-[.domAll()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#8) | 选择所有匹配的DOM元素 |
-[.byId()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#9) | 通过Id选择DOM元素 |
-[.first()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#10) | 选择DOM元素的第一个子元素 |
-[.last()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#11) | 选择DOM元素的最后一个子元素 |
-[.eq()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#12) | 选择第几个子元素 |
-[.not()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#13) | 根据排除选择器选择子元素 |
-[.prev()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#14) | 选择相邻的前一个元素 |
-[.next()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#15) | 选择相邻的下一个元素 |
-[.contains()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#16) | 判断某一个元素是否包含目标元素 |
-[.closest()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#17) | 根据选择器匹配最近的父元素 |
-[.remove()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#18) | 移除DOM元素 |
-[.attr()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#19) | 获取或设置DOM元素的属性 |
-[.removeAttr()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#20) | 移除DOM元素的属性 |
-[.hasCls()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#21) | DOM元素是否含有某个className |
-[.addCls()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#22) | 为DOM元素增加className |
-[.removeCls()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#23) | 移除指定的className |
-[.toggleCls()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#24) | 切换指定的className |
-[.val()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#25) | 获取或设置常用 Form 表单元素的 value 值 |
-[.prepend()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#26) | 在DOM元素内部，首个子元素前插入HTML字符串 |
-[.append()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#27) | 在DOM元素内部，最后一个子元素后面插入HTML字符串 |
-[.before()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#28) | 在DOM元素前面插入HTML字符串 |
-[.after()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#29) | 在DOM元素后面插入HTML字符串 |
-[.html()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#30) | 获取或设置DOM元素的innerHTML |
-[.text()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#31) | 设置或者获取元素的文本内容 |
-[.offset()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#32) | 获取元素在页面中的位置与宽高，(此为距离页面左侧及顶端的位置，并非距离窗口的位置) |
-[.css()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#33) | 设置所传入的DOM元素的样式，可传入多条样式 |
-[.cssVal()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#34) | 获取指定DOM元素的指定属性的完整的值，如800px |
-[.jsonToStr()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#35) | 将标准的JSON 对象转换成字符串格式 |
-[.strToJson()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#36) | 将JSON字符串转换成JSON对象 |
-[.setStorage()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#37) | 设置localStorage数据 |
-[.getStorage()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#38) | 获取localStorage数据，必须与 $api.setStorage() 配套使用 |
-[.rmStorage()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#39) | 清除localStorage中与键名对应的值 |
-[.clearStorage()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#40) | 清除localStorage的所有数据，慎用 |
-[.fixIos7Bar()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#41) | 适配iOS7+系统状态栏，为传入的DOM元素增加20px的上内边距 |
-[.fixStatusBar()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#45) | 适配iOS7+、Android4.4+系统状态栏，为传入的DOM元素增加适当的上内边距，避免header与状态栏重叠 |
-[.toast()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#42) | 延时提示框 |
-[.get()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#43) | api.ajax()方法的get方式简写 |
-[.post()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#44) | api.ajax()方法的post方式简写 |
+[.trim()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#1) | Strip leading and trailing spaces from a string |
+[.trimAll()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#2) | Remove all spaces from the string |
+[.isArray()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#3) | Determine if the object is an array |
+[.addEvt()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#4) | Binding events for DOM elements |
+[.rmEvt()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#5) | Remove DOM element binding event |
+[.one()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#6) | Binding events for DOM elements, the event is executed only once |
+[.dom()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#7) | Select the first matching DOM element |
+[.domAll()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#8) | Select all matching DOM elements |
+[.byId()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#9) | Select DOM element by Id |
+[.first()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#10) | Select the first child element of the DOM element |
+[.last()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#11) | Select the last child element of a DOM element |
+[.eq()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#12) | Select the few child elements |
+[.not()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#13) | Select child elements based on exclusion selector |
+[.prev()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#14) | Select adjacent previous element |
+[.next()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#15) | Select adjacent next element |
+[.contains()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#16) | Determine if an element contains the target element |
+[.closest()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#17) | Match nearest parent element based on selector |
+[.remove()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#18) | Remove DOM Elements |
+[.attr()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#19) | Get or set attributes of DOM elements |
+[.removeAttr()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#20) | Remove attributes from DOM elements |
+[.hasCls()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#21) | Does the DOM element contain a className |
+[.addCls()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#22) | Add className to DOM element |
+[.removeCls()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#23) | Remove the specified className |
+[.toggleCls()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#24) | Toggle the specified className |
+[.val()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#25) | Get or set the value of the common Form element |
+[.prepend()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#26) | Inside the DOM element, insert an HTML string before the first child element |
+[.append()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#27) | Inside the DOM element, insert an HTML string after the last child element |
+[.before()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#28) | Insert HTML string in front of DOM element |
+[.after()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#29) | Insert HTML string after DOM element |
+[.html()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#30) | Get or set the innerHTML of the DOM element |
+[.text()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#31) | Set or get the text content of the element |
+[.offset()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#32) | Get the position and width and height of the element in the page,(this is from the left side of the page And the top position, not the position from the window) |
+[.css()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#33) | Set the style of the DOM element passed in, multiple styles can be passed in |
+[.cssVal()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#34) | Get the full value of the specified attribute of the specified DOM element, such as 800px |
+[.jsonToStr()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#35) | Convert a standard JSON object to a string format |
+[.strToJson()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#36) | Convert JSON String to JSON Object |
+[.setStorage()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#37) | Set localStorage data |
+[.getStorage()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#38) | Get localStorage data, must be used with $api.setStorage() |
+[.rmStorage()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#39) | Clear the value corresponding to the key name in localStorage |
+[.clearStorage()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#40) | Clear all data from localStorage, use with caution |
+[.fixIos7Bar()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#41) | Adapt to iOS7 + system status bar, add 20px top and bottom to the incoming DOM element Margins |
+[.fixStatusBar()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#45) | Adapt to iOS7 +, Android4.4 + system status bar, for incoming DOM elements Increase appropriate top padding to avoid header and status bar overlapping |
+[.toast()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#42) | Delay prompt box |
+[.get()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#43) | Get method shorthand for api.ajax() method |
+[.post()](https://docs.apicloud.com/Front-end-Framework/framework-dev-guide#44) | Post method shorthand for api.ajax() method |
 
-用例:
+For example:
 
 ``` js
 this.$api.setStorage('username', username)
 ```
 
-
-
 ## $req
-- `Description`: 网络请求，`PC` 调试时，使用的是 `axios`, wifi 调试和正式打包时使用的是 `api.ajax()` 方法
+- `Description`: For network requests, `axios` is used for PC debugging, and `api.ajax()` method is used for WiFi debugging and formal packaging
 
-详情请查看[网络请求](./network-request)
+See [Network Request](./network-request) for details
 
 ## element.getRect()
 
-- `Param`: 无
+- `Param`: `None`
 - `Return`: `DOMRect`
-- `Description`: 方法返回元素的大小及其相对于视口的位置, 是 `Element.getBoundingClientRect()` 的封装。
+- `Description`: The method returns the size of the element and its position relative to the viewport, and is an encapsulation of `Element.getBoundingClientRect()`.
 
 `DOMRect`:
 
-  属性 |	类型 |	描述
+  property |	type |	description
   - | - | -
-  bottom |	float |	Y 轴，相对于视口原点（viewport origin）矩形盒子的底部。只读。 
-  height |	float |	矩形盒子的高度（等同于 bottom 减 top）。只读。
-  left |	float |	X 轴，相对于视口原点（viewport origin）矩形盒子的左侧。只读。 
-  right |	loat |	X 轴，相对于视口原点（viewport origin）矩形盒子的右侧。只读。 
-  top |	float |	Y 轴，相对于视口原点（viewport origin）矩形盒子的顶部。只读。
-  width |	float |	矩形盒子的宽度（等同于 right 减 left）。只读。 
-  x |	float |	X 轴，相对于视口原点（viewport origin）矩形盒子的左侧。只读。 
-  y |	float |	Y 轴，相对于视口原点（viewport origin）矩形盒子的顶部。只读。
+  bottom | float | Y axis, relative to the bottom of the rectangular box of the viewport origin. Read-only.
+  height | float | The height of the rectangular box (equivalent to bottom minus top). Read-only.
+  left | float | X axis, relative to the left side of the viewport origin rectangular box. Read-only.
+  right | loat | X axis, relative to the right side of the viewport origin rectangular box. Read-only.
+  top | float | Y axis, relative to the top of the viewport origin rectangular box. Read-only.
+  width | float | The width of the rectangular box (equivalent to right minus left). Read-only.
+  x | float | X axis, relative to the left side of the viewport origin rectangular box. Read-only.
+  y | float | Y axis, relative to the top of the viewport origin rectangular box. Read-only.
 
-用例:
+For example:
 
 ``` js
 this.$api.dom('#id').getRect();
@@ -106,65 +104,80 @@ this.$api.dom('#id').getRect();
 
 ## element.computedStyle()
 
-- `Param`: 无
+- `Param`: `None`
 - `Return`: `CSSStyleDeclaration `
-- `Description`: 返回一个对象，该对象在应用活动样式表并解析这些值可能包含的任何基本计算后报告元素的所有CSS属性的值。私有的CSS属性值可以通过对象提供的 API 或通过简单地使用 CSS 属性名称进行索引来访问。是 `window.getComputedStyle(element)` 的封装。
+- `Description`: Returns an object that reports the values of all CSS properties of an element after applying the active style sheet and parsing any basic calculations that these values may contain. Private CSS property values can be accessed through the API provided by the object or by simply indexing using CSS property names. It is a wrapper for `window.getComputedStyle(element)`.
 
-用例:
+For example:
 
 ``` js
 this.$api.dom('#id').computedStyle();
 ```
 
-
 ## $page
 
 - `Type`: `Object`
-- `Description`: 操作页面的方法对象，包含 `open`, `push`, `close`, `closeToWin`, `pageParam` 方法。
+- `Description`: Method objects for manipulating pages, including `open`,` push`, `close`,` closeToWin`, `pageParam` methods.
 
 ### open(url, options)
-- `Description`: 打开 `window` 页面, 若 `window` 已存在，则会把该 `window` 显示到最前面，同时若 `url` 有变化或者 `reload` 参数为 `true` 时，页面会重新加载。`api.openWin()` 方法的封装。
+- `Description`: Open the `window` page. If` window` already exists, the `window` will be displayed on the front. At the same time, if the` url` changes or the `reload` parameter is` true`, the page will reload. A wrapper for the `api.openWin()` method.
 - `Param`: 
-  - `url`: `string`, 必填项，页面地址，可以为本地文件路径，支持相对路径和绝对路径，以及 widget://、fs:// 等协议路径，也可以为远程地址。 当 `winOpts.data` 参数不为空时，`url` 将做为`baseUrl`，`winOpts.data` 中的 `html` 引用的资源文件根路径以该 `url` 为基础。
-  - `options`: `object`, 打开页面的参数，包含以下几项
-    - `name`: `string`, 可选项，要打开 `window` 的 `name`, 默认为 `win_${url}`, 
-    - `pageParam`: `any`, 可选项，向要打开 `window` 页面传递的数据，无默认值
-    - `winOpts`: `object`, 可选项，要打开页面 `window` 的所有参数，详见[官方文档](https://docs.apicloud.com/Client-API/api#33), 内部参数可覆盖外部参数
-    - `animation`: `object`, 可选项，页面打开的动画效果， 详见[官方文档](https://docs.apicloud.com/Client-API/api#33)
-      - `type`: 动画类型
-      - `subType`: 动画子类型
-      - `duration`: `number`, 动画过渡时间，默认300毫秒
+  - **`url`**: 
+    + `Type`: `string`,
+    + `Required`: `true`
+    + `Description`: The page address can be a local file path, relative path and absolute path, as well as protocol paths such as widget://, fs://, or remote addresses. When the `winOpts.data` parameter is not empty,` url` will be used as `baseUrl`, and the root path of the resource file referenced by` html` in `winOpts.data` will be based on the` url`.
+  - **`options`**:
+    + `type`: `object`
+    + `Required`: `false`
+    + `Description`: Parameters for opening the page, including the following items
+
+    | options | type | required | Description
+    | - | - | - | -
+    | name | `string` | `false` | the `name` of `window`, the default is `win_${url}`
+    | pageParam | `any` | `false` | Data passed to the window to be opened, no default value
+    | winOpts | `object` | `false` | To open all the parameters of the page `window`, see [Official Documentation](https://docs.apicloud.com/Client-API/api#33) for details. Internal parameters can override external parameters
+    | animation | `object` | `false` | The animation effect of the page opening, see [Official Documents](https://docs.apicloud.com/Client-API/api#33)
+
+    The internal parameters of `animation` are as follows
+    
+    | options | type | required | Description
+    | - | - | - | -
+    | `type` | `string` | `false` | Animation type
+    | `subType` | `string` | `false` | Animation subtype
+    | `duration` | `number` | `false` | Animation transition time, default 300 milliseconds
+
     ``` js
     {
-        type: "none",                //动画类型（详见动画类型常量）
-        subType: "from_right",       //动画子类型（详见动画子类型常量）
-        duration: 300                //动画过渡时间，默认300毫秒
+        type: "none",                // Animation type (see animation type constants for details)
+        subType: "from_right",       // animation subtype (see the animation subtype constant for details)
+        duration: 300                // Animation transition time, default 300 milliseconds
     }
 
-    type 取值范围：
+    value range of `type`：
 
-    none            // 无动画效果
-    push            // 新视图将旧视图推开
-    movein          // 新视图移到旧视图上面
-    fade            // 交叉淡化过渡（不支持过渡方向）
-    flip            // 翻转效果
-    reveal          // 将旧视图移开,显示下面的新视图
-    ripple          // 滴水效果（不支持过渡方向）
-    curl            // 向上翻一页
-    un_curl         // 向下翻一页
-    suck            // 收缩效果（不支持过渡方向）
-    cube            // 立方体翻滚效果
+    none            // no animation effect
+    push            // new view pushes old view away
+    movein          // move the new view over the old view
+    fade            // Cross-fade transition (transition direction is not supported)
+    flip            // flip effect
+    reveal          // move the old view away and show the new view below
+    ripple          // drip effect (transition direction is not supported)
+    curl            // page up
+    un_curl         // page down
+    suck            // shrink effect (transition direction is not supported)
+    cube            // cube roll effect
 
     subType 取值范围：
 
-    from_right      // 从右边开始动画
-    from_left       // 从左边开始动画
-    from_top        // 从顶部开始动画
-    from_bottom     // 从底部开始动画
+    from_right      // start the animation from the right
+    from_left       // start the animation from the left
+    from_top        // start the animation from the top
+    from_bottom     // start the animation from the bottom
 
     （Android系统flip，ripple，curl，un_curl，suck，cube 类型不支持）
     ```
-用例:
+
+For example:
 
 ``` vue
 <script>
@@ -175,8 +188,8 @@ export default {
       this.$page.open('article/details', {
         name: 'articleDetailsPage',
         pageParam: {
-          title: '标题',
-          content: '内容'
+          title: 'this is title',
+          content: 'this is content'
         }
       })
     },
@@ -197,11 +210,19 @@ export default {
 ### push(urlOrOptions)
 - `Description`: 打开一个新的 `window` 页面, `open` 方法的封装
 - `Param`: 
-  - `urlOrOptions`: `string | object`, 必填项，打开页面的参数，如果是 `string` 类型，则当作 `url` 直接传递给 `open()` 方法， 如果是 `object`, 则包含以下几项
-    - `name`: `string`, 可选项，要打开 `window` 的 `name`, 这里可以填写 `src/config/pages.js` 里面配置的页面的 `name`，可直接打开该页面
-    - 其余参数与 `open()` 方法一样
+  - **`urlOrOptions`**:
+    + `Type`: `string | object`
+    + `Required`: 是
+    + `Description`: The parameter to open the page, if it is a `string` type, it is passed directly to the open () method as` url`, if it is `object`, it contains the following items
 
-用例:
+    | options | type | required | description
+    | - | - | - | -
+    | name | `string` | `false` | To open the `name` of `window`, you can fill in the `name` of the page configured in `src/config/pages.js`. It will open the page directly.
+    | pageParam | `any` | `false` | Data passed to the window to be opened, no default value
+    | winOpts | `object` | `false` | To open all the parameters of the page `window`, see [Official Documentation](https://docs.apicloud.com/Client-API/api#33) for details. Internal parameters can override external parameters
+    | animation | `object` | `false` | The animation effect of the page opening, see [Official Documents](https://docs.apicloud.com/Client-API/api#33), Same as `open()` method parameter `options.animation`
+
+For example:
 
 ``` vue
 <script>
@@ -226,10 +247,10 @@ export default {
 ```
 
 ### close()
-- `Description`: 关闭当前 `window` 页面，`api.closeWin()` 方法的封装。
-- `Param`: 无
+- `Description`: Close the current `window` page, the wrapper of the` api.closeWin() `method.
+- `Param`: `None`
 
-用例:
+For example:
 
 ``` vue
 <script>
@@ -247,11 +268,17 @@ export default {
 ### closeToWin(options)
 - `Description`: 关闭到指定 window，最上面显示的 window 到指定 name 的 window 间的所有 window 都会被关闭，`api.closeToWin()` 方法的封装。
 - `Param`: 
-  - `options`: `object`
-    - `name`： `string`, window 名字
-    - `animation`：`object` （可选项）动画参数，不传时使用默认动画, 详见 `open()` 方法的 `animation` 参数
+  - **`options`**:
+    + `Type`: `object`
+    + `Required`: `true`
+    + `Description`: Options to close to the specified window, including the following items
 
-用例:
+    | options | type | required | description
+    | - | - | - | -
+    | name | `string` | `true` | Specify window name
+    | animation | `object` | `false` | The animation effect of the page opening, see [Official Documents](https://docs.apicloud.com/Client-API/api#33), Same as `open()` method parameter `options.animation`
+
+For example:
 
 ``` vue
 <script>
@@ -267,17 +294,17 @@ export default {
 ```
 
 ### pageParam()
-- `Description`: 用于获取页面间传递的参数值，为 `api.openWin()`、`api.openFrame()`、`$page.open()`、`$page.push()`、`$frame.open()` 等方法中的 `pageParam` 参数对应值， `api.pageParam` 属性的封装。
-- `Param`: 无
-- `Return`: `any`
+-`Description`: Used to get the parameter values passed between pages, which are `api.openWin()`, `api.openFrame()`, `$page.open()`, `$page.push()`, `$frame.open()` corresponding value of the pageParam parameter in methods. It is a wrapper for the `api.pageParam` property.
+-`Param`: `None`
+-`Return`:` sny`
 
-用例:
+For example:
 
 ``` vue
 <script>
 export default {
   name: 'closeToWin-demo',
-  data () {
+  data() {
     return {
       article: null
     }
@@ -287,7 +314,7 @@ export default {
       this.article = this.$page.pageParam()
     },
   },
-  onReady () {
+  onReady() {
     this.getData()
   }
 }
@@ -296,15 +323,21 @@ export default {
 
 ## $frame
 - `Type`: `Object`
-- `Description`: 操作 `Frame` 的方法对象，包含 `open()` 方法。
+- `Description`: Method object for manipulating `Frame`, including `open()` method.
 
 ### open(options)
-- `Description`: 打开 frame, 若 frame 已存在，则会把该窗口显示到最前面并显示，如果 url 和之前的 url 有变化，或者 reload 为 true 时，页面会刷新.此方法对 frameGroup 里面的 frame 不起作用，`api.openFrame()` 方法的封装
+- `Description`: Open the frame, if the frame already exists, it will display the window to the front and display it. If the url and the previous url are changed, or the reload is true, the page will be refreshed. This method has no effect on the frame in the frameGroup, it is a wrapper for the `api.openFrame()` method
 - `Param`: 
-  - `url`: `string`, 必填项，打开页面的路径，支持相对路径，绝对路径，网络协议 `http`， `https`， 相对协议 `//`
-  - `options`: `object`, 打开 `frame` 的参数，详见[官方文档](https://docs.apicloud.com/Client-API/api#27)
-  
-用例:
+  - **`url`**:
+    + `Type`: `string`
+    + `Required`: `true`
+    + `Description`: Path to open the page, support relative path, absolute path, network protocol `http`,` https`, relative protocol `//`
+  - **`options`**:
+    + `Type`: `object`
+    + `Required`: `false`
+    + `Description`: Open the parameters of `frame`, see [official documentation](https://docs.apicloud.com/Client-API/api#27)
+
+For example:
 
 ``` vue
 <script>
@@ -325,34 +358,41 @@ export default {
       })
     },
   },
-  onReady () {
+  onReady() {
     this.openHeader('Article Title')
   }
 }
 </script>
 ```
 ## $toast(options)
-- `Description`: 弹出一个定时自动关闭的提示框, `api.toast()` 方法的封装
+- `Description`: Pop up a prompt box that closes automatically at regular intervals, the wrapper of the `api.toast()` method
 - `Param`: 
-  - `options`: `object`
-    - `msg`: `string`, 提示消息
-    - `duration`: `number`,（可选项）持续时长，单位：毫秒, 默认值 3000
-    - `location`：`string`,（可选项）弹出位置，顶部、中间或底部
+  - **`options`**:
+    + `Type`: `object`
+    + `Required`: `true`
+    + `Description`: the options of toast, including the following items
 
-    取值范围:
+    | options | type | required | description
+    | - | - | - | -
+    | msg | `string` | `true` | message
+    | duration | `number` | `false` | Duration in milliseconds, default 3000
+    | location | `string` | `false` | Pop position, top, middle or bottom, default by `bottom`
+    
+    `location` value range:
 
     ``` js
-    top         // 顶部
-    middle      // 中间
-    bottom      // 底部
+    top
+    middle
+    bottom
     ```
-用例:
+
+For example:
 
 ``` vue
 <script>
 export default {
   name: 'toast-demo',
-  onReady () {
+  onReady() {
     this.$toast({ msg: '页面已经打开', location: 'top' })
   }
 }
@@ -360,34 +400,34 @@ export default {
 ```
 
 ## $pagesInfo
-- `Description`: 获取页面配置信息， 以数组的形式返回
+- `Description`: Get page configuration information and return it as an array
 
-用例：
+For example:
 
 ``` js
 console.log(this.$pagesInfo)
 /**
 [
   {
-    title: "开屏广告页",
+    title: "Open ad page",
     name: "index",
     path: "index/index",
     htmlPath: "indexindex"
   },
   {
-    title: "登录页",
+    title: "Login page",
     name: "login",
     path: "login/index",
     htmlPath: "loginindex"
   },
   {
-    title: "应用首页",
+    title: "Home page",
     name: "home",
     path: "home/index",
     htmlPath: "homeindex"
   },
   {
-    title: "web页面",
+    title: "Web page",
     name: "web",
     path: "home/web",
     htmlPath: "homeweb"
@@ -398,11 +438,11 @@ console.log(this.$pagesInfo)
 ```
 
 ## $getPageMap()
-- `Description`: 获取页面配置信息, 以对象的形式返回，页面的 `key` 即配置的页面的 `name`
-- `Param`: 无
+- `Description`: Get page configuration information, returned as an object, the `key` of the page is the `name` of the configured page
+- `Param`: `None`
 - `Return`: `object`
 
-用例：
+For example:
 
 ``` js
 console.log(this.$getPageMap())
@@ -410,25 +450,25 @@ console.log(this.$getPageMap())
 /**
 {
   index: {
-    title: "开屏广告页",
+    title: "Open ad page",
     name: "index",
     path: "index/index",
     htmlPath: "indexindex"
   },
   login: {
-    title: "登录页",
+    title: "Login page",
     name: "login",
     path: "login/index",
     htmlPath: "loginindex"
   },
   home: {
-    title: "应用首页",
+    title: "Home page",
     name: "home",
     path: "home/index",
     htmlPath: "homeindex"
   },
   web: {
-    title: "web页面",
+    title: "Web page",
     name: "web",
     path: "home/web",
     htmlPath: "homeweb"
@@ -439,16 +479,16 @@ console.log(this.$getPageMap())
 ```
 
 ## $bindKeyBackExitApp()
-- `Description`: 绑定 `keyback` 为连续按下 2 次退出应用
-- `Param`: 无
+- `Description`: Bind `keyback` to exit the application by pressing 2 times
+- `Param`: `None`
 
-用例:
+For example:
 
 ``` vue
 <script>
 export default {
   name: 'bindKeyBackExitApp-demo',
-  onReady () {
+  onReady() {
     this.$bindKeyBackExitApp()
   }
 }
@@ -456,12 +496,17 @@ export default {
 ```
 
 ## $n2p(name)
-- `Description`: 将页面的 `name` 转换为页面的 `htmlPath`
+- `Description`: Convert page's `name` to page's `htmlPath`
 - `Param`: 
-  - `name`: `string`, 必填项， 为 `src/config/pages.js` 文件中配置的页面的 `name`
-- `Return` : `string`, 页面的 `htmlPath`
+  - **`name`**:
+    + `Type`: `string`
+    + `Required`：`true`
+    + `Description`: `name` of pages configured in `src/config/pages.js` file
+- `Return` : 
+  + `Type`: `string`
+  + `Description`: `htmlPath` of the page
 
-用例:
+For example:
 
 ``` vue
 <script>
@@ -477,19 +522,19 @@ export default {
 ```
 
 ## $getSafeArea()
-- `Description`: 页面不被其它内容（如状态栏）遮住的区域，`JSON` 对象，通过 `safeArea` 能够知道当前页面哪些地方被遮住，从而做出相应的调整，保证页面重要元素不被遮挡住，比如应对顶部 `header` 被状态栏遮住一部分，可以为 `header` 增加一个 `paddingTop，``api.safeArea` 属性的封装
-- `Param`: 无
+- `Description`: Area where the page is not obscured by other content, such as the status bar，Through `safeArea`, you can know where the current page is covered, and make corresponding adjustments to ensure that important elements of the page are not covered. For example, if the top header is partially covered by the status bar, you can add a `paddingTop` to the header., It is a wrapper for the `api.safeArea` property.
+- `Param`: `None`
 - `Return` : `object`
 ``` js
 {
-    top:       // 安全区域上边缘，对于沉浸式下window中该值通常为状态栏高度，全屏或非沉浸式下为0（iPhone X竖屏时全屏状态下也为44）
-    left:      // 安全区域左边缘，通常为0（iPhone X横屏时为44）
-    bottom:    // 安全区域下边缘，通常为0（iPhone X竖屏时为34，横屏时为21）
-    right:     // 安全区域右边缘，通常为0（iPhone X横屏时为44）
+    top:       // The upper edge of the safe area. For windows in immersive mode, the value is usually the height of the status bar, and 0 in full screen or non-immersive mode (44 in full screen when the iPhone X is in vertical screen).
+    left:      // Left edge of safe area, usually 0 (44 in iPhone X landscape)
+    bottom:    // Lower edge of the safe area, usually 0 (iPhone X is 34 in portrait and 21 in landscape)
+    right:     // Right edge of safe area, usually 0 (44 in iPhone X landscape)
 }
 ```
 
-用例:
+For example:
 
 ``` vue
 <script>
@@ -509,18 +554,18 @@ export default {
 ```
 
 ## $getWinSize()
-- `Description`: 获取屏幕尺寸，包括 `winHeight`, `winWidth`, 是`api.winHeight`、`api.winWidth` 属性的封装。
-- `Param`: 无
+- `Description`: Gets the screen size, including `winHeight`,` winWidth`, which are wrappers for the `api.winHeight`,` api.winWidth` properties.
+- `Param`: `None`
 - `Return` : `object`
 
 ``` js
 {
-  winHeight: // 屏幕高度
-  winWidth:  // 屏幕宽度
+  winHeight: // Screen height
+  winWidth:  // Screen width
 }
 ```
 
-用例:
+For example:
 
 ``` js
 const { winHeight, winWidth } = this.$getWinSize()
@@ -528,64 +573,44 @@ const { winHeight, winWidth } = this.$getWinSize()
 ```
 
 ## $setPullDownRefresh(callback，options)
-- `Description`: 显示默认下拉刷新组件，使用默认下拉刷新组件时会自动重新设置页面的弹动属性。`api.setRefreshHeaderInfo()` 方法的封装。
+- `Description`: The default pull-down refresh component is displayed. When the default pull-down refresh component is used, the snap properties of the page are automatically reset. A wrapper for the `api.setRefreshHeaderInfo()` method.
 - `Param`: 
-  - `callback`: `Function`, 必填项，处于下拉刷新状态的回调
-  - `options`: `object`, 可选项
-    - `visible`：
-      - 类型：布尔
-      - 默认值：`true`
-      - 描述：（可选项）是否可见
-    - `bgColor`：
-      - 类型：字符串
-      - 默认值：当 `defaultRefreshHeader` 为 `pull` 时为 `rgba(187, 236, 153, 1.0)`，为 `swipe `时为 `#fff`
-      - 描述：（可选项）背景颜色    
-    - `pathColor`：
-      - 类型：字符串
-      - 默认值：`#0F9D58`
-      - 描述：（可选项）进度条的颜色，`defaultRefreshHeader` 为 `swipe` 时生效。
-    - `loadingImg`：
-      - 类型：字符串
-      - 默认值：旋转箭头图片
-      - 描述：（可选项）上拉下拉时的图片地址，`defaultRefreshHeader` 为 `pull` 时生效。
-    - `textColor`：
-      - 类型：字符串
-      - 默认值：`rgba(109, 128, 153, 1.0)`
-      - 描述：（可选项）文本颜色，`defaultRefreshHeader` 为 `pull`时生效。
-    - `textDown`：
-      - 类型：字符串
-      - 默认值：`下拉可以刷新...`
-      - 描述：（可选项）下拉文字描述，`defaultRefreshHeader` 为 `pull` 时生效。
-    - `textUp`：
-      - 类型：字符串
-      - 默认值：`松开可以刷新...`
-      - 描述：（可选项）松开时文字描述，`defaultRefreshHeader` 为 `pull` 时生效。
-    - `textLoading`：
-      - 类型：字符串
-      - 默认值：`加载中...`
-      - 描述：（可选项）加载状态文字描述，`defaultRefreshHeader` 为 `pull` 时生效。
-    - `textTime`：
-      - 类型：字符串
-      - 默认值：`最后更新加日期时间`
-      - 描述：（可选项）更新时间文字描述，`defaultRefreshHeader` 为 `pull` 时生效。
-    - `showTime`：
-      - 类型：布尔
-      - 默认值：`true`
-      - 描述：（可选项）是否显示更新时间，`defaultRefreshHeader` 为 `pull` 时生效。
+  - **`callback`**:
+    + `Type`：`Function`
+    + `Required`: `true`
+    + `Description`: Callback in pull-down refresh state
+  - `options`: `object`
+    + `Type`：`object`
+    + `Required`: `false`
+    + `Description`: Optional refresh options, including the following items
 
-用例:
+    | options | type | default | description
+    | - | - | - | -
+    | visible | `boolean` | `true` | is visible
+    | bgColor | `string` | `rgba (187, 236, 153, 1.0)` when `defaultRefreshHeader` is `pull`, `#fff` when it is `swipe` | background color   
+    | pathColor | `string`  | `#0F9D58` | The color of the progress bar, which takes effect when `defaultRefreshHeader` is `swipe`.
+    | loadingImg | `string` | Rotate arrow image | Picture address when pulling up or down. Effective when `defaultRefreshHeader` is `pull`.
+    | textColor | `string` | `rgba (109, 128, 153, 1.0)` | `defaultRefreshHeader` takes effect when it is `pull`.
+    | textDown | `string` | `Dropdown can refresh ...`| Dropdown text description, effective when `defaultRefreshHeader` is `pull`.
+    | textUp | `string` | `Release to refresh ...`| Text description when released, effective when `defaultRefreshHeader` is `pull`.
+    | textLoading | `string` | Default: `Loading ...`| Loading status text description, effective when `defaultRefreshHeader` is `pull`.
+    | textTime | `string` | `Last update plus datetime` | Update time text description, effective when `defaultRefreshHeader` is `pull`.
+    | showTime | `boolean` | `true` | Whether to show the update time, which takes effect when `defaultRefreshHeader` is `pull`.
+
+
+For example:
 
 ``` vue
 <script>
 export default {
   name: 'setPullDownRefresh-demo',
-  data () {
+  data() {
     return {
       data: {}
     }
   },
   methods: {
-    initData () {
+    initData() {
       this.$req.get('/url').then(rs => {
         this.data = rs.data
         this.api.refreshHeaderLoadDone();
@@ -595,7 +620,8 @@ export default {
   onReady() {
     this.$setPullDownRefresh(() => {
       // TODO
-      // 在这里从服务器加载数据，加载完成后调用 this.api.refreshHeaderLoadDone() 方法恢复组件到默认状态
+      // Load data from the server here.
+      // After loading, call this.api.refreshHeaderLoadDone() method to restore the component to the default state.
       this.initData();
     })
   }
