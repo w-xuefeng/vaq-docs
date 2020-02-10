@@ -98,6 +98,7 @@ function getGuideSidebar(groupA, groupB) {
       collapsable: false,
       children: [
         '',
+        'dev-tools',
         'getting-started',
         'directory-structure',
         'assets',
