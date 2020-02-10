@@ -2,7 +2,7 @@
 
 ## 简单使用
 
-> this.$req 是 NetworkRequest 的一个实例
+> `this.$req` 是 `NetworkRequest` 的一个实例
 
 ### this.$req.get(url)
 - `描述`: get 请求
@@ -127,7 +127,7 @@ this.$req.setBaseUrl('https://api.example.com')
 ```
 
 ### this.$req.interceptor
-- `描述`: 请求拦截器，在发送请求之前执行，可对请求参数进行预处理，通过 `this.requestOptions` 访问到请求的 `options`，这里 `this` 指向 `Request` 实例，这里不可用箭头函数代替，否则 this 将指向 Vue 实例
+- `描述`: 请求拦截器，在发送请求之前执行，可对请求参数进行预处理，通过 `this.requestOptions` 访问到请求的 `options`，这里 `this` 指向 `NetworkRequest ` 实例，这里不可用箭头函数代替，否则 this 将指向 Vue 实例
 - `类型`: `Function`
 - `返回值`: `boolean`, 返回 true 将继续发送请求，返回 false 将取消请求发送
 
@@ -160,7 +160,7 @@ export default {
       const _this = this
       this.$req.setBaseUrl('https://api.example.com')
       this.$req.interceptor = function () {
-        // 此处不可用箭头函数， 否则无法获取 Request 实例的参数 requestOptions
+        // 此处不可用箭头函数， 否则无法获取 NetworkRequest  实例的参数 requestOptions
         // 请求拦截器
         // 在发起请求前执行
         this.requestOptions.headers = {
@@ -218,6 +218,7 @@ export default {
 
 ``` js
 import { NetworkRequest } from 'vue-apicloud-quickstart'
+import { Base64 } from 'js-base64'
 
 export default class HttpRequest {
   constructor (baseUrl) {
@@ -239,8 +240,12 @@ export default class HttpRequest {
     // 添加请求拦截器
     instance.interceptor = function () {
       // 请求拦截器，在发送请求之前做点什么
-      this.requestOptions.header = {
-        // TODO 如修改请求头内容
+      if (!url.includes('/login')) {
+        this.requestOptions.header = {
+          // TODO 如, 修改请求头内容
+          ...this.requestOptions.header,
+          'Authorization': Base64.encode(`${Math.floor(new Date().getTime())}-${window.$api.getStorage('token')}`)
+        }
       }
       return true
     }

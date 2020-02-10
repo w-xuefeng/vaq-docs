@@ -1,17 +1,17 @@
 # Network Request
 
-## 简单使用
+## Simple to use
 
-> this.$req 是 NetworkRequest 的一个实例
+> `this.$req` is an instance of `NetworkRequest`
 
 ### this.$req.get(url)
-- `描述`: get 请求
-- `参数`：
+- `Description`: get request
+- `Param`：
   - **`url`**
-    + `类型`: `string`
-    + `是否必须`: 是
-    + `描述`: 请求的地址
-- `返回值`: `Promise`
+    + `Type`: `string`
+    + `Required`: `true`
+    + `Description`: the address of request
+- `Return`: `Promise`
 
 ``` vue
 <script>
@@ -36,21 +36,21 @@ export default {
 ```
 
 ### this.$req.post(url, data, headers)
-- `描述`: post 请求
-- `参数`：
+- `Description`: post request
+- `Param`：
   - **`url`**
-    + `类型`: `string`
-    + `是否必须`: 是
-    + `描述`: 请求的地址
+    + `Type`: `string`
+    + `Required`: `true`
+    + `Description`: the address of request
   - **`data`**
-    + `类型`: `object`
-    + `是否必须`: 否
-    + `描述`: 发送的数据
+    + `Type`: `object`
+    + `Required`: `false`
+    + `Description`: the data to send
   - **`headers`**
-    + `类型`: `object`
-    + `是否必须`: 否
-    + `描述`: 发送的请求头
-- `返回值`: `Promise`
+    + `Type`: `object`
+    + `Required`: `false`
+    + `Description`: request header
+- `Return`: `Promise`
 
 ``` vue
 <script>
@@ -87,60 +87,60 @@ export default {
 </script>
 ```
 ### this.$req.request(options)
-- `描述`: 发送请求
-- `返回值`: `Promise`
-- `参数`：
+- `Description`: send request
+- `Return`: `Promise`
+- `Param`：
   - **`options`**
-    + `类型`: `object`
-    + `是否必须`: 是
-    + `描述`: 请求的可选项，包括以下几项
+    + `Type`: `object`
+    + `Required`: `true`
+    + `Description`: Requested options, including the following items
 
-| 可选项 | 类型 | 是否必须 | 默认值 | 描述
+| Optional | Type | Required | Default | Description
 | - | - | - | - | - 
-| url | string | true | undefined | 请求地址
-| data | object | false | undefined | 发送的数据
-| files | object | false | undefined | 以表单方式提交文件，支持多文件上传（JSON对象）,如 {"file": "path"}，也支持同一字段对应多文件：{"file":["path1","path2"]}。文件路径，支持绝对路径，以及fs://、cache://、box://等文件路径协议。可直接使用其他端 API 返回的结果，如 api.getPicture 回调的 ret.data 等.
-| method | string | false | 'get' | 请求方式，取值范围 'get'、'post'、'put'、'delete'、 'head'、 'options'、 'patch'
-| encode | boolean | false | true | 是否对url进行编码。默认或传 true 时，Android 将始终对 url 编码，而 iOS 只有在 url 不合法（如存在中文字符）的时候才进行编码。如果url中有特殊字符需要编码的，建议先在 js 层进行编码，然后此参数传 false。
-| tag | string | false | `ajax-${new Date().getTime()}` | 该字段用于传给 cancelAjax 方法来取消请求，如果传入该字段，请保证各个 ajax 的 tag 字段唯一
-| timeout | number | false | 30 | 超时时间，单位：秒
-| headers | object | false | undefined | 请求头
-| dataType | string | false | 'json' | 返回数据类型。若该字段传 json，接收到服务器返回的数据后会尝试将其转换成 JSON 对象，如果无法转成 JSON 对象，将返回数据类型错误，取值范围 'json','text';
-| returnAll |  boolean | false | false | 是否需要返回所有 response 信息（包括响应头、消息体、状态码），为 true 时，返回的头信息获取方法(ret.headers)，消息体信息获取方法(ret.body)，状态码获取方法(ret.statusCode)
-| charset | string | false | utf-8 | 当响应头里面没有返回字符集编码时，使用此编码来解析数据
-| report | boolean | false | false | 是否实时返回上传文件进度
-| cache | boolean | false | false | 是否缓存，若缓存，下次没网络时请求则会使用缓存，仅在 get 请求有效
-| certificate | object | false | undefined | 用于https请求开启双向认证的情况下，客户端配置p12安全证书设置。`{ path: 'p12证书路径，支持fs://、widget://、cache://等文件路径协议，字符串类型' ,password:'证书密码，字符串类型' }`
-| safeMode | string | false | 'none' |设置请求安全模式。设置后，若检测到数据有安全风险时将返回 “不安全的数据” 错误 ，取值范围 'none'， 'both'，'request'， 'response';
-| proxy | object | false | undefined | 设置代理请求服务器。`{ host: // 服务器地址，字符串类型 port: // 服务器端口，数字类型 }`
+| url | string | true | undefined | Request address
+| data | object | false | undefined | the data to send
+| files | object | false | undefined | Submit files in form, support multiple file uploads (JSON objects), such as {"file": "path"}, also supports multiple files for the same field: {"file": ["path1", "path2"]} File path, support absolute path, and file path protocols such as fs: //, cache: //, box: //, etc. You can directly use the results returned by other end APIs, such as ret.data of api.getPicture callback, etc.
+| method | string | false | 'get' | Request method, this value range is 'get'、'post'、'put'、'delete'、 'head'、 'options'、 'patch'
+| encode | boolean | false | true | Whether to encode the url. By default or passed true, Android will always encode the URL, while iOS will only encode when the URL is illegal (such as the presence of Chinese characters). If there are special characters in the url that need to be encoded, it is recommended to encode them in the js layer first, and then this parameter is passed false.
+| tag | string | false | `ajax-${new Date().getTime()}` | This field is used to pass the cancelAjax method to cancel the request. If this field is passed in, please ensure that the tag field of each ajax is unique
+| timeout | number | false | 30 | Timeout time, unit: second
+| headers | object | false | undefined | Request header
+| dataType | string | false | 'json' | Returns the data type. If the field is passed json, after receiving the data returned by the server, it will try to convert it into a JSON object. If it cannot be converted into a JSON object, it will return a data type error. The value range is 'json', 'text';
+| returnAll |  boolean | false | false | Whether to return all response information (including response header, message body, and status code). When true, the returned header information acquisition method (ret.headers), message body information acquisition method (ret.body), and status code acquisition method ( ret.statusCode)
+| charset | string | false | utf-8 | When no character set encoding is returned in the response header, use this encoding to parse the data
+| report | boolean | false | false | Whether to return upload file progress in real time
+| cache | boolean | false | false | Whether to cache, if cached, the next time the network is requested, the cache will be used, which is only valid for get requests
+| certificate | object | false | undefined | Used in the case of https request to enable bidirectional authentication, the client configures the p12 security certificate settings`{ path: 'p12 certificate path, support file path protocols such as fs: //, widget: //, cache: //, string type' ,password:'Certificate password, string type' }`
+| safeMode | string | false | 'none' | Set request security mode. After setting, if the data is detected to have a security risk, an "unsafe data" error will be returned. The value range is 'none', 'both', 'request', 'response'
+| proxy | object | false | undefined | Set up a proxy request server. `{ host: // server address, string type port: // server port, numeric type }`
 
 ### this.$req.setBaseUrl(baseUrl)
-- `描述`: 设置请求的基础 url，之后请求即可使用相对地址
-- `参数`：
+- `Description`: Set the base URL of the request, and later requests can use the relative address
+- `Param`：
   - **`baseUrl`**
-    + `类型`: `string`
-    + `是否必须`: 是
-    + `描述`: 请求的基础网络地址
+    + `Type`: `string`
+    + `Required`: `true`
+    + `Description`: Requested base network address
 
 ``` js
 this.$req.setBaseUrl('https://api.example.com')
 ```
 
 ### this.$req.interceptor
-- `描述`: 请求拦截器，在发送请求之前执行，可对请求参数进行预处理，通过 `this.requestOptions` 访问到请求的 `options`，这里 `this` 指向 `Request` 实例，这里不可用箭头函数代替，否则 this 将指向 Vue 实例
-- `类型`: `Function`
-- `返回值`: `boolean`, 返回 true 将继续发送请求，返回 false 将取消请求发送
+- `Description`: The request interceptor is executed before the request is sent. The request parameters can be pre-processed. The requested options can be accessed through `this.requestOptions`, where` this` points to the `NetworkRequest` instance, and arrow functions cannot be used here. this will point to a Vue instance
+- `Type`: `Function`
+- `Return`: `boolean`, Returns true to continue sending requests, false to cancel requests
 
 ### this.$req.handleError
-- `描述`: 错误处理，在发送请求出错时执行
-- `类型`: `Function`
-- `参数`: `Error`
+- `Description`: Error handling, executed when there is an error in sending the request
+- `Type`: `Function`
+- `Param`: `Error`
 
 ### this.$req.afterReauest
-- `描述`: 响应拦截器
-- `类型`: `Function`
-- `参数`: 服务端返回的数据
-- `返回值`: 返回的数据将作为请求的返回数据
+- `Description`: Response interceptor
+- `Type`: `Function`
+- `Param`: Data returned by the server
+- `Return`: The returned data will be the requested return data
 
 ``` vue
 <script>
@@ -160,20 +160,20 @@ export default {
       const _this = this
       this.$req.setBaseUrl('https://api.example.com')
       this.$req.interceptor = function () {
-        // 此处不可用箭头函数， 否则无法获取 Request 实例的参数 requestOptions
-        // 请求拦截器
-        // 在发起请求前执行
+        // Arrow function is not available here, otherwise Param requestOptions of NetworkRequest instance cannot be obtained
+        // request interceptor
+        // execute before request
         this.requestOptions.headers = {
           ...this.requestOptions.headers,
           'Authorization': Base64.encode(`${Math.floor(new Date().getTime())}-${_this.username}`)
         }
         return true
-        // 返回值决定是否发起请求
-        // 返回 true 继续发送请求
-        // 返回 false 拦截请求，取消发送
+        // The return value determines whether to initiate the request
+        // return true to continue sending requests
+        // return false to intercept the request and cancel sending
       }
       this.$req.afterReauest = rs => {
-        alert(`发送请求结束，返回的数据为 \n ${JSON.stringify(rs.data, null, 2)}`)
+        alert(`After sending the request, the returned data is \n ${JSON.stringify(rs.data, null, 2)}`)
         return rs.data
       }
       this.$req.handleError = err => {
@@ -190,74 +190,79 @@ export default {
 ```
 
 ### this.$req.setTag(tag)
-- `描述`: 设置当前请求的 tag， 用于传给 cancelAjax 方法来取消请求，如果传入该字段，请保证各个 ajax 的 tag 字段唯一
-- `参数`：
+- `Description`: Sets the tag of the current request. It is used to cancelAjax by passing the cancelAjax method. If this field is passed in, please ensure that the tag field of each ajax is unique.
+- `Param`：
   - **`tag`**
-    + `类型`: `string`
-    + `是否必须`: 是
-    + `描述`: 每个请求的唯一标志
+    + `Type`: `string`
+    + `Required`: `true`
+    + `Description`: Unique flag for each request
 
 ### this.$req.getTag()
-- `描述`: 获取当前请求的 tag
-- `返回值`：
+- `Description`: Get the currently requested tag
+- `Return`：
   - **`tag`**
-    + `类型`: `string | CancelTokenSource`
-    + `描述`: 若在 PC 端调试，则返回 `axios` 的 `CancelTokenSource`，若在 移动端 Loader 调试，则返回 设置的 tag 字符串或者默认的 tag 字符串
+    + `Type`: `string | CancelTokenSource`
+    + `Description`: If debugging on the PC side, it returns the `CancelTokenSource` of `axios`, and if debugging on the mobile loader, it returns the set tag string or the default tag string
 
 ### this.$req.cancelAjax(tag)
-- `描述`: 取消传入 tag 的请求
-- `参数`：
+- `Description`: Cancel request by tag
+- `Param`：
   - **`tag`**
-    + `类型`: `string`
-    + `是否必须`: 是
-    + `描述`: 要取消请求的标志
+    + `Type`: `string`
+    + `Required`: `true`
+    + `Description`: Sign to cancel request
 
-## 全局使用
+## Global use
 
-新建 `src/utils/HttpRequest.js`：
+create a new file `src/utils/HttpRequest.js`：
 
 ``` js
 import { NetworkRequest } from 'vue-apicloud-quickstart'
+import { Base64 } from 'js-base64'
 
 export default class HttpRequest {
   constructor (baseUrl) {
-    // 设置基础地址
+    // Set the base address
     this.baseUrl = baseUrl
-    // 存储请求队列
+    // Store request queue
     this.queue = {}
   }
 
-  // 销毁请求实例
+  // destroy request instance
   destroy (url) {
     delete this.queue[url]
     const queue = Object.keys(this.queue)
     return queue.length
   }
 
-  // 请求拦截
+  // request interception
   interceptors (instance, url) {
-    // 添加请求拦截器
+    // add request interceptor
     instance.interceptor = function () {
-      // 请求拦截器，在发送请求之前做点什么
-      this.requestOptions.header = {
-        // TODO 如修改请求头内容
+      // request interceptor, do something before sending the request
+      if (!url.includes('/login')) {
+        this.requestOptions.header = {
+          // TODO, for example, modify the content of the request header
+          ...this.requestOptions.header,
+          'Authorization': Base64.encode(`${Math.floor(new Date().getTime())}-${window.$api.getStorage('token')}`)
+        }
       }
       return true
     }
 
-    // 添加响应拦截器
+    // add response interceptor
     instance.afterReauest = rs => {
-      // TODO 请求结束之后做点什么
+      // TODO, Do something after the request
       this.destroy(url)
       return rs
     }
 
     instance.handleError = (/* err */) => {
-      // TODO 统一的错误处理
+      // TODO, Unified error handling
     }
   }
 
-  // 创建实例
+  // create instance
   create () {
     const request = new NetworkRequest()
     request.setBaseUrl(this.baseUrl)
@@ -268,7 +273,7 @@ export default class HttpRequest {
     return request
   }
 
-  // 请求实例
+  // request instance
   request (options) {
     const instance = this.create()
     this.interceptors(instance, options.url)
@@ -279,7 +284,7 @@ export default class HttpRequest {
 }
 ```
 
-新建 `src/utils/request.js`：
+create a new file `src/utils/request.js`：
 
 ``` js
 import HttpRequest from './HttpRequest'
@@ -299,10 +304,10 @@ export const getUserinfo = usertoken => {
   return Req.request({ url: `/users/${usertoken}` })
 }
 
-// 在这里定义业务的请求
+// Define the business request here
 ```
 
-在页面中使用， `src/paegs/login/index.vue`:
+Use in pages， `src/paegs/login/index.vue`:
 
 ``` vue
 <script>
