@@ -330,10 +330,6 @@ export default {
 ### open(options)
 - `描述`: 打开 frame, 若 frame 已存在，则会把该窗口显示到最前面并显示，如果 url 和之前的 url 有变化，或者 reload 为 true 时，页面会刷新.此方法对 frameGroup 里面的 frame 不起作用，`api.openFrame()` 方法的封装
 - `参数`: 
-  - **`url`**:
-    + `类型`: `string`
-    + `是否必须`: 是
-    + `描述`: 打开页面的路径，支持相对路径，绝对路径，网络协议 `http`， `https`， 相对协议 `//`
   - **`options`**:
     + `类型`: `object`
     + `是否必须`: 否

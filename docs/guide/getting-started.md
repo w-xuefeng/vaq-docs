@@ -21,7 +21,7 @@ $ vue add @w-xuefeng/apicloud
 Or execute the following command in the project directory
   
 ``` bash
-$ npm i @w-xuefeng/apicloud     # Or use yarn
+$ npm i @w-xuefeng/vue-cli-plugin-apicloud     # Or use yarn
 $ vue invoke @w-xuefeng/apicloud
 ```
 
@@ -63,7 +63,7 @@ $ vue add @w-xuefeng/apicloud
 Or execute the following command in the project directory
 
 ``` bash
-$ npm i @w-xuefeng/apicloud     # Or use yarn
+$ npm i @w-xuefeng/vue-cli-plugin-apicloud     # Or use yarn
 $ vue invoke @w-xuefeng/apicloud
 ```
 

@@ -327,11 +327,7 @@ export default {
 
 ### open(options)
 - `Description`: Open the frame, if the frame already exists, it will display the window to the front and display it. If the url and the previous url are changed, or the reload is true, the page will be refreshed. This method has no effect on the frame in the frameGroup, it is a wrapper for the `api.openFrame()` method
-- `Param`: 
-  - **`url`**:
-    + `Type`: `string`
-    + `Required`: `true`
-    + `Description`: Path to open the page, support relative path, absolute path, network protocol `http`,` https`, relative protocol `//`
+- `Param`:
   - **`options`**:
     + `Type`: `object`
     + `Required`: `false`

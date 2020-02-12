@@ -21,7 +21,7 @@ $ vue add @w-xuefeng/apicloud
 或者在项目目录下执行
   
 ``` bash
-$ npm i @w-xuefeng/apicloud     # 或者使用 yarn
+$ npm i @w-xuefeng/vue-cli-plugin-apicloud     # 或者使用 yarn
 $ vue invoke @w-xuefeng/apicloud
 ```
 
@@ -62,7 +62,7 @@ $ vue add @w-xuefeng/apicloud
 或者在项目目录下执行
   
 ``` bash
-$ npm i @w-xuefeng/apicloud     # 或者使用 yarn
+$ npm i @w-xuefeng/vue-cli-plugin-apicloud    # 或者使用 yarn
 $ vue invoke @w-xuefeng/apicloud
 ```
 
