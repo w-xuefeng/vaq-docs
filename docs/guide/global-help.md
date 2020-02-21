@@ -167,14 +167,14 @@ this.$api.dom('#id').computedStyle();
     suck            // shrink effect (transition direction is not supported)
     cube            // cube roll effect
 
-    subType 取值范围：
+    value range of `subType`：
 
     from_right      // start the animation from the right
     from_left       // start the animation from the left
     from_top        // start the animation from the top
     from_bottom     // start the animation from the bottom
 
-    （Android系统flip，ripple，curl，un_curl，suck，cube 类型不支持）
+    （Android system does not support flip, ripple, curl, un_curl, suck and cube types）
     ```
 
 For example:
@@ -208,11 +208,11 @@ export default {
 ```
 
 ### push(urlOrOptions)
-- `Description`: 打开一个新的 `window` 页面, `open` 方法的封装
+- `Description`: Opening a new `window` page, it is the encapsulation of the `open` method
 - `Param`: 
   - **`urlOrOptions`**:
     + `Type`: `string | object`
-    + `Required`: 是
+    + `Required`: `true`
     + `Description`: The parameter to open the page, if it is a `string` type, it is passed directly to the open () method as` url`, if it is `object`, it contains the following items
 
     | options | type | required | description
@@ -266,7 +266,7 @@ export default {
 ```
 
 ### closeToWin(options)
-- `Description`: 关闭到指定 window，最上面显示的 window 到指定 name 的 window 间的所有 window 都会被关闭，`api.closeToWin()` 方法的封装。
+- `Description`: Close to the specified window. All windows from the top window to the specified name window will be closed, it is the encapsulation of the `api.closeToWin()` method.
 - `Param`: 
   - **`options`**:
     + `Type`: `object`
@@ -389,7 +389,7 @@ For example:
 export default {
   name: 'toast-demo',
   onReady() {
-    this.$toast({ msg: '页面已经打开', location: 'top' })
+    this.$toast({ msg: 'The page is already open', location: 'top' })
   }
 }
 </script>
