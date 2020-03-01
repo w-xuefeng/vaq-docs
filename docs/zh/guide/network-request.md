@@ -136,7 +136,7 @@ this.$req.setBaseUrl('https://api.example.com')
 - `类型`: `Function`
 - `参数`: `Error`
 
-### this.$req.afterReauest
+### this.$req.afterRequest
 - `描述`: 响应拦截器
 - `类型`: `Function`
 - `参数`: 服务端返回的数据
@@ -147,7 +147,7 @@ this.$req.setBaseUrl('https://api.example.com')
 import { Base64 } from 'js-base64'
 
 export default {
-  name: 'ajax-interceptor-handleError-afterReauest-demo',
+  name: 'ajax-interceptor-handleError-afterRequest-demo',
   data() {
     return {
       username: '',
@@ -172,7 +172,7 @@ export default {
         // 返回 true 继续发送请求
         // 返回 false 拦截请求，取消发送
       }
-      this.$req.afterReauest = rs => {
+      this.$req.afterRequest = rs => {
         alert(`发送请求结束，返回的数据为 \n ${JSON.stringify(rs.data, null, 2)}`)
         return rs.data
       }
@@ -251,7 +251,7 @@ export default class HttpRequest {
     }
 
     // 添加响应拦截器
-    instance.afterReauest = rs => {
+    instance.afterRequest = rs => {
       // TODO 请求结束之后做点什么
       this.destroy(url)
       return rs

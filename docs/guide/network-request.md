@@ -136,7 +136,7 @@ this.$req.setBaseUrl('https://api.example.com')
 - `Type`: `Function`
 - `Param`: `Error`
 
-### this.$req.afterReauest
+### this.$req.afterRequest
 - `Description`: Response interceptor
 - `Type`: `Function`
 - `Param`: Data returned by the server
@@ -147,7 +147,7 @@ this.$req.setBaseUrl('https://api.example.com')
 import { Base64 } from 'js-base64'
 
 export default {
-  name: 'ajax-interceptor-handleError-afterReauest-demo',
+  name: 'ajax-interceptor-handleError-afterRequest-demo',
   data() {
     return {
       username: '',
@@ -172,7 +172,7 @@ export default {
         // return true to continue sending requests
         // return false to intercept the request and cancel sending
       }
-      this.$req.afterReauest = rs => {
+      this.$req.afterRequest = rs => {
         alert(`After sending the request, the returned data is \n ${JSON.stringify(rs.data, null, 2)}`)
         return rs.data
       }
@@ -251,7 +251,7 @@ export default class HttpRequest {
     }
 
     // add response interceptor
-    instance.afterReauest = rs => {
+    instance.afterRequest = rs => {
       // TODO, Do something after the request
       this.destroy(url)
       return rs
