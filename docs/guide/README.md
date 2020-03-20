@@ -1,5 +1,14 @@
 # Introduction
 
+
+![npm](https://img.shields.io/npm/v/vue-apicloud-quickstart?style=flat-square)
+![npm](https://img.shields.io/npm/dt/@w-xuefeng/vue-cli-plugin-apicloud?style=flat-square)
+
+**`Typescript` support since `1.0.20`**
+
+---
+
+
 Vue-APICloud-Quickstart consists of two parts:
 
 - The first part is `ready.plugin`, which mainly solves the API problems, such as `api`, `apiready` does not exist in PC browser. Using Vue mixin to register a new life cycle `onReady` to the Vue instance, `onReady` will execute after `mounted`, and ensure that apiready has been executed; registering `apiEvent` to the Vue instance, which can quickly realize the listening of native events.

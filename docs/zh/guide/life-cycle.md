@@ -31,3 +31,32 @@ export default {
 }
 </script>
 ```
+
+## 使用 Typescript
+
+``` vue
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+import { VueAPICloud } from 'vue-apicloud-quickstart'
+
+@VueAPICloud
+@Component
+export default class APIEventDemo extends Vue {
+  map: any = null
+
+  initMap () {
+    this.map = this.api.require('bMap');
+    if (this.api.systemType === 'ios') {
+      this.map.initMapSDK(rs => {
+        rs.status && this.$toast({ msg: '地图模块初始化成功' });
+      });
+    }
+  }
+
+  onReady () {
+    this.initMap();
+  }
+}
+</script>
+```
+

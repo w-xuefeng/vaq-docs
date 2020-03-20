@@ -11,7 +11,7 @@ api.addEventListener({
   if (ret) {
     // TODO
   } else {
-    // Error Handel
+    // Error Handle
   }
 });
 ```
@@ -30,7 +30,7 @@ export default {
         if (ret) {
           this.$toast({ msg: 'Back key pressed' })
         } else {
-          // Error Handel
+          // Error Handle
         }
       });
     },
@@ -63,7 +63,7 @@ export default {
       if (ret) {
         this.$toast({ msg: 'Back key pressed' });
       } else {
-        // Error Handel
+        // Error Handle
       }
     },
     scrolltobottom: {
@@ -72,7 +72,7 @@ export default {
       },
       handle (/*ret, err*/) {
         // loadMore TODO
-        this.$toast({ msg: '已滚动到底部' });
+        this.$toast({ msg: 'Scrolled to the bottom' });
       }
     }
   }
@@ -123,7 +123,7 @@ export default {
         const { key1, key2 } = ret.value;
         // TODO width  key1, key2 
       } else {
-        // Error Handel
+        // Error Handle
       }
     },
   }
@@ -189,4 +189,41 @@ export default {
   }
 }
 </script>
+
 ```
+## Using Typescript
+
+If you use `Typescript`, two decorators `VueAPICloud` and `APIEvent` will be used, and the `onWindowChange` does not require a decorator
+
+``` vue {5,9,14}
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+import { VueAPICloud, APIEvent } from 'vue-apicloud-quickstart'
+
+@VueAPICloud
+@Component
+export default class APIEventDemo extends Vue {
+
+  @APIEvent({ extra: { threshold: 0 } })
+  scrolltobottom () {
+    this.$toast({ msg: 'Scrolled to the bottom' });
+  }
+
+  @APIEvent()
+  myEventName (ret: any, err: any) {
+    if (ret) {
+      const { key1, key2 } = ret.value;
+      // TODO width  key1, key2 
+    } else {
+      // Error Handle
+    }
+  }
+
+  onWindowChange () {
+    // TODO
+    this.$toast({ msg: 'Screen orientation changed' })
+  }
+}
+</script>
+```
+

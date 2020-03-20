@@ -11,7 +11,7 @@ api.addEventListener({
   if (ret) {
     // TODO
   } else {
-    // Error Handel
+    // Error Handle
   }
 });
 ```
@@ -29,7 +29,7 @@ export default {
         if (ret) {
           this.$toast({ msg: '按下了返回键' })
         } else {
-          // Error Handel
+          // Error Handle
         }
       });
     },
@@ -62,7 +62,7 @@ export default {
       if (ret) {
         this.$toast({ msg: '按下了返回键' });
       } else {
-        // Error Handel
+        // Error Handle
       }
     },
     scrolltobottom: {
@@ -122,7 +122,7 @@ export default {
         const { key1, key2 } = ret.value;
         // TODO width  key1, key2 
       } else {
-        // Error Handel
+        // Error Handle
       }
     },
   }
@@ -187,4 +187,43 @@ export default {
 }
 </script>
 ```
+
+## 使用 Typescript
+
+在 `Typescript` 中，将使用 `VueAPICloud` 与 `APIEvent` 两个装饰器完成, 其中 `onWindowChange` 不需要装饰器
+
+``` vue {5,9,14}
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+import { VueAPICloud, APIEvent } from 'vue-apicloud-quickstart'
+
+@VueAPICloud
+@Component
+export default class Demo extends Vue {
+
+  @APIEvent({ extra: { threshold: 0 } })
+  scrolltobottom () {
+    this.$toast({ msg: '已滚动到底部' });
+  }
+
+  @APIEvent()
+  myEventName (ret: any, err: any) {
+    if (ret) {
+      const { key1, key2 } = ret.value;
+      // TODO width  key1, key2 
+    } else {
+      // Error Handle
+    }
+  }
+
+  onWindowChange () {
+    // TODO
+    this.$toast({ msg: '屏幕方向发生了改变' })
+  }
+}
+</script>
+```
+
+
+
 

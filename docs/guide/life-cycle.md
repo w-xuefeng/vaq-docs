@@ -31,3 +31,32 @@ export default {
 }
 </script>
 ```
+
+## Using Typescript
+
+``` vue
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+import { VueAPICloud } from 'vue-apicloud-quickstart'
+
+@VueAPICloud
+@Component
+export default class Demo extends Vue {
+  map: any = null
+
+  initMap () {
+    this.map = this.api.require('bMap');
+    if (this.api.systemType === 'ios') {
+      this.map.initMapSDK(rs => {
+        rs.status && this.$toast({ msg: 'bMap module initialized successfully' });
+      });
+    }
+  }
+
+  onReady () {
+    this.initMap();
+  }
+}
+</script>
+```
+
