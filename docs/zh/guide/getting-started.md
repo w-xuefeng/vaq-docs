@@ -9,12 +9,14 @@
 ``` bash
 # 假设你已经全局安装了最新版的 vue-cli
 # 使用 vue-cli 创建一个新的 vue 项目
+# 已支持 Typescript 项目
 $ vue create project
 
 # 切换到项目目录下
 $ cd project
 
 # 安装 vue-apicloud-quickstart
+# 将自动识别项目是否使用 Typescript
 $ vue add @w-xuefeng/apicloud
 ```
 

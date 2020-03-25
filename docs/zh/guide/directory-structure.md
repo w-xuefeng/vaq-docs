@@ -10,7 +10,7 @@ vue-apicloud-quickstart 遵循 **“约定优于配置”** 的原则，推荐�
 ├── src
 │   ├── pages                # 页面入口
 │   └── config               # 配置入口
-|       └── pages.js         # 页面配置
+|       └── pages.json       # 页面配置
 ├── index.html               # APP入口
 ├── config.xml               # APICloud 项目配置文件
 ├── .syncignore              # APICloud wifi 同步忽略文件
@@ -33,13 +33,22 @@ vue-apicloud-quickstart 遵循 **“约定优于配置”** 的原则，推荐�
 - `public/res`: 静态媒体资源目录。
 - `src/pages`: 页面目录。
 - `src/config`: 用于存放配置文件的目录。
-- `src/config/pages.js`: 页面配置文件。
+- `src/config/pages.json`: 页面配置文件。
 - `index.html`: APP入口，只有在移动端 Loader WiFi 调试或正式打包时才会使用。
 - `config.xml`: APICloud 项目配置文件。
 - `.syncignore `: APICloud wifi 同步忽略文件。
 
 ::: warning 注意
-当你想要在`src/pages`目录下新建页面时，必须要在`src/config/pages.js`中配置相关参数才能生效。
+当你想要在`src/pages`目录下新建页面时，必须要在`src/config/pages.json`中配置相关参数才能生效。
+
+如果你使用 `Typescript` 的话，你需要在 `tsconfig.json` 中添加如下配置
+  ``` json
+  {
+    "compilerOptions": {
+      "resolveJsonModule": true
+    }
+  }
+  ```
 :::
 
 **同时阅读:**
@@ -69,35 +78,34 @@ vue-apicloud-quickstart 遵循 **“约定优于配置”** 的原则，推荐�
 |   |       ├── index.vue
 |   |       └── web.vue
 │   └── config
-|       └── pages.js
+|       └── pages.json
 :::
 
-`src/config/pages.js` 文件中对应的页面配置如下：
+`src/config/pages.json` 文件中对应的页面配置如下：
 
-``` js
-module.exports = [
+``` json
+[
   {
-    title: '开屏广告页',
-    name: 'index',
-    path: 'index/index'
+    "title": "开屏广告页",
+    "name": "index",
+    "path": "index/index"
   },
   {
-    title: '登录页',
-    name: 'login',
-    path: 'login/index'
+    "title": "登录页",
+    "name": "login",
+    "path": "login/index"
   },
   {
-    title: '应用首页',
-    name: 'home',
-    path: 'home/index'
+    "title": "应用首页",
+    "name": "home",
+    "path": "home/index"
   },
   {
-    title: 'web页面',
-    name: 'web',
-    path: 'home/web'
+    "title": "web页面",
+    "name": "web",
+    "path": "home/web"
   }
 ]
-
 ```
 则其对应的编译后页面文件路径如下：
 

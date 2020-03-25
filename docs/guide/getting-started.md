@@ -9,12 +9,14 @@ vue-apicloud-quickstart requires Node.js >= 8.
 ``` bash
 # Assuming you have the latest version of vue-cli installed globally
 # Create a new vue project using vue-cli
+# Typescript project supported
 $ vue create project
 
 # Change to the project directory
 $ cd project
 
 # install vue-apicloud-quickstart
+# it will automatically identify whether the project uses typescript
 $ vue add @w-xuefeng/apicloud
 ```
 

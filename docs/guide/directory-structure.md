@@ -12,7 +12,7 @@ vue-apicloud-quickstart follows the principle of **"Convention is better than co
 ├── src
 │   ├── pages                # Page entry
 │   └── config               # Configuration entry
-|       └── pages.js         # Page configuration
+|       └── pages.json       # Page configuration
 ├── index.html               # APP entrance
 ├── config.xml               # APICloud project configuration file
 ├── .syncignore              # APICloud wifi-sync ignore file
@@ -37,13 +37,22 @@ When naming files and directories, please follow the code encryption specificati
 - `public/res`: Directory of static media resources.
 - `src/pages`: Page directory.
 - `src/config`: Directory for the configuration files.
-- `src/config/pages.js`: Page configuration file.
+- `src/config/pages.json`: Page configuration file.
 - `index.html`: The APP entrance is only used when debugging of Loader WiFi on the mobile side or formal packaging.
 - `config.xml`: APICloud project configuration file.
 - `.syncignore `: APICloud wifi-sync ignore file.
 
 ::: warning Note
-When you want to create a new page in the `src/pages` directory, you must configure related parameters in` src/config/pages.js` to take effect.
+When you want to create a new page in the `src/pages` directory, you must configure related parameters in` src/config/pages.json` to take effect.
+
+If you use `Typescript`, you need to add the following configuration to `tsconfig.json`:
+  ``` json
+  {
+    "compilerOptions": {
+      "resolveJsonModule": true
+    }
+  }
+  ```
 :::
 
 **Also see:**
@@ -73,35 +82,34 @@ For example, the following file directory structure exists:
 |   |       ├── index.vue
 |   |       └── web.vue
 │   └── config
-|       └── pages.js
+|       └── pages.json
 :::
 
-The corresponding page configuration in the `src/config/pages.js` is as follows:
+The corresponding page configuration in the `src/config/pages.json` is as follows:
 
-``` js
-module.exports = [
+``` json
+[
   {
-    title: 'Open ad page',
-    name: 'index',
-    path: 'index/index'
+    "title": "开屏广告页",
+    "name": "index",
+    "path": "index/index"
   },
   {
-    title: 'login page',
-    name: 'login',
-    path: 'login/index'
+    "title": "登录页",
+    "name": "login",
+    "path": "login/index"
   },
   {
-    title: 'home page',
-    name: 'home',
-    path: 'home/index'
+    "title": "应用首页",
+    "name": "home",
+    "path": "home/index"
   },
   {
-    title: 'web page',
-    name: 'web',
-    path: 'home/web'
+    "title": "web页面",
+    "name": "web",
+    "path": "home/web"
   }
 ]
-
 ```
 The corresponding compiled page file path is as follows:
 
