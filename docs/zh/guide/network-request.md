@@ -307,7 +307,7 @@ export const getUserinfo = usertoken => {
 // 在这里定义业务的请求
 ```
 
-在页面中使用， `src/paegs/login/index.vue`:
+在页面中使用， `src/pages/login/index.vue`:
 
 ``` vue
 <script>

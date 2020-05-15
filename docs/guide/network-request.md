@@ -307,7 +307,7 @@ export const getUserinfo = usertoken => {
 // Define the business request here
 ```
 
-Use in pages， `src/paegs/login/index.vue`:
+Use in pages， `src/pages/login/index.vue`:
 
 ``` vue
 <script>
