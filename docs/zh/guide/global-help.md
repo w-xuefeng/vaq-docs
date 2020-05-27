@@ -625,3 +625,113 @@ export default {
 }
 </script>
 ```
+
+## $randomColor(options)
+- `描述`: 生成随机颜色， 默认以 16 进制返回，可配置为 `rgb` 或 `rgba` 类型返回
+- `返回值` : `string`
+- `参数`: 
+  - **`options`**:
+    + `类型`: `object`
+    + `是否必须`：否
+    + `描述`: 配置返回类型和透明度，包含以下几项
+
+    | 可选项 | 类型 | 默认值 | 描述
+    | - | - | - | -
+    | rgb | `boolean` | `false` | 是否以 `rgb` 形式返回
+    | opacity | `number | 'random'`| 1 | 透明度, 以 `rgba` 形式返回
+
+用例:
+
+``` js
+this.$randomColor()
+// #ffffff
+
+this.$randomColor({ rgb: true })
+// rgb(255,255,255)
+
+this.$randomColor({ rgb: true, opacity: 0.5 })
+// rgba(255,255,255, 0.5)
+
+this.$randomColor({ rgb: true, opacity: 'random' })
+// rgba(255,255,255, 0.123)
+```
+
+## $isLightColor(color)
+- `描述`: 判断颜色是否为浅色，默认返回 true
+- `参数`: `string`, 支持 16 进制类型 和 `rgb[a]` 类型的颜色表示，颜色阀值参考自 [jscolor](https://github.com/EastDesire/jscolor/blob/0fb8b8e33569b0edcb5bafbae124f5d440146897/jscolor.js#L1270)
+- `返回值` : `boolean`
+
+用例:
+
+``` js
+this.$isLightColor()
+// true
+
+this.$isLightColor('transparent')
+// true
+
+this.$isLightColor('#fff')
+// true
+this.$isLightColor('#000')
+// false
+
+this.$isLightColor('#ffffff')
+// true
+this.$isLightColor('#000000')
+// false
+
+this.$isLightColor('rgb(255,255,255)')
+// true
+this.$isLightColor('rgba(0,0,0)')
+// false
+
+this.$isLightColor('rgba(255,255,255, 0.8)')
+// true
+this.$isLightColor('rgba(0,0,0, 0.8)')
+// false
+```
+
+## $setStatusBarStyle(optionsOrColor)
+- `描述`: 设置状态栏背景颜色和字体颜色, 是`api.setStatusBarStyle` 方法的封装。
+- `返回值` : 无
+- `参数`:
+  - **`optionsOrColor`**:
+    + `类型`: `object` | `string`
+    + `是否必须`：是
+    + `描述`: 如果参数类型为 `string`, 则为状态栏的背景颜色，字体颜色默认为黑色，若为 `object`，则为配置状态栏样式的选项，包含以下几项
+
+    | 可选项 | 类型 | 默认值 | 描述
+    | - | - | - | -
+    | color | `string` | #000 | 状态栏背景颜色，只 Android 5.0 及以上有效
+    | style | `'light' | 'dark'`| `light` | 状态栏字体颜色，支持iOS，Android 支持小米 MIUI6.0 及以上手机，魅族 Flyme4.0 及以上手机，其他 Android6.0 及以上手机。Android 因设备厂商定制差异，频繁切换 style 不一定生效。若不设置，则自动通过 `$isLightColor` 判断所传背景颜色是否是浅色，浅色则为 `dark`, 否则为 `light`
+    | animated | `boolean` | `false` | 是否有动画效果，只iOS有效
+
+  - `style` 的取值范围
+  ```js
+  dark        // 状态栏字体为黑色，适用于浅色背景
+  light       // 状态栏字体为白色，适用于深色背景
+  ```
+
+
+用例:
+
+``` js
+// 设置状态栏为透明背景 字体颜色为 `dark`
+this.$setStatusBarStyle('transparent')
+
+// 设置状态栏为具体颜色 字体颜色通过 `isLightColor` 判断
+this.$setStatusBarStyle('#007ACC')
+
+// 设置状态栏为透明背景 字体颜色为 `light`
+this.$setStatusBarStyle({
+  color: 'transparent',
+  style: 'light'
+})
+
+// 设置状态栏为具体颜色 字体颜色为 `light`， 并有动画效果
+this.$setStatusBarStyle({
+  color: '#007ACC',
+  style: 'light',
+  animated: true
+})
+```
