@@ -624,3 +624,114 @@ export default {
 }
 </script>
 ```
+
+
+## $randomColor(options)
+- `Description`: generate a random color. It is returned in hexadecimal by default. It can be configured as `rgb` or `rgba` type
+- `Return` : `string`
+- `Param`: 
+  - **`options`**:
+    + `Type`: `object`
+    + `Required`：`false`
+    + `Description`: to configure the return type and transparency, including the following items
+
+    | options | type | default | description
+    | - | - | - | -
+    | rgb | `boolean` | `false` | Whether to return in the form of `rbg`
+    | opacity | `number | 'random'`| 1 | Transparency, return as `rgba`
+
+For example:
+
+``` js
+this.$randomColor()
+// #ffffff
+
+this.$randomColor({ rgb: true })
+// rgb(255,255,255)
+
+this.$randomColor({ rgb: true, opacity: 0.5 })
+// rgba(255,255,255, 0.5)
+
+this.$randomColor({ rgb: true, opacity: 'random' })
+// rgba(255,255,255, 0.123)
+```
+
+## $isLightColor(color)
+- `Description`: Judge whether the color is light, return true by default
+- `Param`: `string`, support color representation of hexadecimal type and `rgb[a]`, and the color threshold refers to [jscolor](https://github.com/EastDesire/jscolor/blob/0fb8b8e33569b0edcb5bafbae124f5d440146897/jscolor.js#L1270)
+- `Return` : `boolean`
+
+For example:
+
+``` js
+this.$isLightColor()
+// true
+
+this.$isLightColor('transparent')
+// true
+
+this.$isLightColor('#fff')
+// true
+this.$isLightColor('#000')
+// false
+
+this.$isLightColor('#ffffff')
+// true
+this.$isLightColor('#000000')
+// false
+
+this.$isLightColor('rgb(255,255,255)')
+// true
+this.$isLightColor('rgba(0,0,0)')
+// false
+
+this.$isLightColor('rgba(255,255,255, 0.8)')
+// true
+this.$isLightColor('rgba(0,0,0, 0.8)')
+// false
+```
+
+## $setStatusBarStyle(optionsOrColor)
+- `Description`: Setting the background color and font color of the status bar, it is an encapsulation of the `api.setStatusBarStyle` method.
+- `Return` : `None`
+- `Param`:
+  - **`optionsOrColor`**:
+    + `Type`: `object` | `string`
+    + `Required`：`true`
+    + `Description`: If the parameter type is `string`, it is the background color of the status bar, the font color is black by default, if the parameter type is` object`, it is the option to configure the status bar style, including the following items
+
+    | options | type | default | description
+    | - | - | - | -
+    | color | `string` | #000 | Status bar background color, only valid for Android 5.0 and above
+    | style | `'light' | 'dark'`| `light` | The font color of the status bar supports iOS, Android supports Xiaomi MIUI 6.0 and above phones, Meizu Flyme 4.0 and above phones, and other Android 6.0 and above phones. Due to differences in customization of device manufacturers, frequent switching of styles may not take effect. If not set, it will automatically judge whether the transmitted background color is light color through `$ isLightColor`, the light color is` dark`, otherwise it is `light`
+    | animated | `boolean` | `false` | Is there an animation effect, only valid for iOS
+
+  - Value range of `style`
+  ```js
+  dark        // The status bar font is black, suitable for light backgrounds
+  light       // The status bar font is white, suitable for dark background
+  ```
+
+
+For example:
+
+``` js
+// Set the status bar to transparent background and the font color to dark
+this.$setStatusBarStyle('transparent')
+
+// Set the status bar to a specific color. The font color is determined by `isLightColor`
+this.$setStatusBarStyle('#007ACC')
+
+// Set the status bar to transparent background and the font color to `light`
+this.$setStatusBarStyle({
+  color: 'transparent',
+  style: 'light'
+})
+
+// Set the status bar to a specific color, the font color is `light`, and have an animation effect
+this.$setStatusBarStyle({
+  color: '#007ACC',
+  style: 'light',
+  animated: true
+})
+```
