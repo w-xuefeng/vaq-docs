@@ -70,6 +70,115 @@ title 作为编译后 html 文件的 title，可为空，页面所展示的 titl
 
 是页面文件相对于 `src/pages` 目录的相对路径，不需要加文件扩展名，如 `src/pages/login/index.vue` 的 path 为 `login/index`
 
+## 状态栏样式配置
+
+### color
+
+- 类型: `string`
+- 默认值: `#000`
+
+状态栏背景颜色，只 Android 5.0 及以上有效
+
+### style
+
+- 类型: `'light' | 'dark'`
+- 默认值: `light`
+
+状态栏字体颜色，支持iOS，Android 支持小米 MIUI6.0 及以上手机，魅族 Flyme4.0 及以上手机，其他 Android6.0 及以上手机。Android 因设备厂商定制差异，频繁切换 style 不一定生效。若不设置，则自动通过 `$isLightColor` 判断所传背景颜色是否是浅色，浅色则为 `dark`, 否则为 `light`
+
+### animated
+
+- 类型: `boolean`
+- 默认值: `false`
+
+是否有动画效果，只iOS有效
+
+示例：
+
+``` vue
+<script>
+export default {
+  name: 'set-status-bar-style-demo',
+  statusBar: {
+    color: 'transparent',
+    style: 'light'
+  }
+}
+</script>
+```
+
+```vue
+<script>
+export default {
+  name: 'set-status-bar-style-demo',
+  statusBar: {
+    color: 'transparent',
+    style: 'light',
+    animated: true
+  }
+}
+</script>
+```
+
+在 `typescript` 中配置
+
+``` vue
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+import { VueAPICloud } from 'vue-apicloud-quickstart'
+@VueAPICloud
+@Component({
+  statusBar: {
+    color: 'transparent',
+    style: 'light'
+  }
+})
+export default class Demo extends Vue {}
+</script>
+```
+
+或者直接配置 `color`，`style` 将通过 `$isLightColor` 自动判断
+
+``` vue
+<script>
+export default {
+  name: 'set-status-bar-style-demo',
+  statusBar: 'transparent'
+}
+</script>
+```
+
+```vue
+<script>
+export default {
+  name: 'set-status-bar-style-demo',
+  statusBar: '#007ACC'
+}
+</script>
+```
+
+在 `typescript` 中配置
+
+``` vue
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+import { VueAPICloud } from 'vue-apicloud-quickstart'
+@VueAPICloud
+@Component({ statusBar: 'transparent' })
+export default class Demo extends Vue {}
+</script>
+```
+
+```vue
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+import { VueAPICloud } from 'vue-apicloud-quickstart'
+@VueAPICloud
+@Component({ statusBar: '#007ACC' })
+export default class Demo extends Vue {}
+</script>
+```
+
 ## APICloud 应用配置
 
 ::: tip

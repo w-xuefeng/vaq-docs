@@ -703,7 +703,7 @@ this.$isLightColor('rgba(0,0,0, 0.8)')
     | 可选项 | 类型 | 默认值 | 描述
     | - | - | - | -
     | color | `string` | #000 | 状态栏背景颜色，只 Android 5.0 及以上有效
-    | style | `'light' | 'dark'`| `light` | 状态栏字体颜色，支持iOS，Android 支持小米 MIUI6.0 及以上手机，魅族 Flyme4.0 及以上手机，其他 Android6.0 及以上手机。Android 因设备厂商定制差异，频繁切换 style 不一定生效。若不设置，则自动通过 `$isLightColor` 判断所传背景颜色是否是浅色，浅色则为 `dark`, 否则为 `light`
+    | style | `'light' | 'dark'` | `light` | 状态栏字体颜色，支持iOS，Android 支持小米 MIUI6.0 及以上手机，魅族 Flyme4.0 及以上手机，其他 Android6.0 及以上手机。Android 因设备厂商定制差异，频繁切换 style 不一定生效。若不设置，则自动通过 `$isLightColor` 判断所传背景颜色是否是浅色，浅色则为 `dark`, 否则为 `light`
     | animated | `boolean` | `false` | 是否有动画效果，只iOS有效
 
   - `style` 的取值范围

@@ -70,6 +70,115 @@ As the unique identification of the current page, it cannot be repeated with oth
 
 It is the relative path of the page file relative to the `src/pages` directory. You do not need to add a file extension. For example, the path of `src/pages/login/index.vue` is `login/index`
 
+## Status bar style configuration
+
+### color
+
+- Type: `string`
+- Default: `#000`
+
+Status bar background color, only valid for Android 5.0 and above
+
+### style
+
+- Type: `'light' | 'dark'`
+- Default: `light`
+
+The font color of the status bar supports iOS, Android supports Xiaomi MIUI 6.0 and above phones, Meizu Flyme 4.0 and above phones, and other Android 6.0 and above phones. Due to differences in customization of device manufacturers, frequent switching of styles may not take effect. If not set, it will automatically judge whether the transmitted background color is light color through `$isLightColor`, the light color is` dark`, otherwise it is `light`
+
+### animated
+
+- Type: `boolean`
+- Default: `false`
+
+Is there an animation effect, only valid for iOS
+
+Examples:
+
+``` vue
+<script>
+export default {
+  name: 'set-status-bar-style-demo',
+  statusBar: {
+    color: 'transparent',
+    style: 'light'
+  }
+}
+</script>
+```
+
+```vue
+<script>
+export default {
+  name: 'set-status-bar-style-demo',
+  statusBar: {
+    color: 'transparent',
+    style: 'light',
+    animated: true
+  }
+}
+</script>
+```
+
+Configure in `typescript`
+
+``` vue
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+import { VueAPICloud } from 'vue-apicloud-quickstart'
+@VueAPICloud
+@Component({
+  statusBar: {
+    color: 'transparent',
+    style: 'light'
+  }
+})
+export default class Demo extends Vue {}
+</script>
+```
+
+Or directly configure `color`, the `style` will be automatically judged by `$isLightColor`
+
+``` vue
+<script>
+export default {
+  name: 'set-status-bar-style-demo',
+  statusBar: 'transparent'
+}
+</script>
+```
+
+```vue
+<script>
+export default {
+  name: 'set-status-bar-style-demo',
+  statusBar: '#007ACC'
+}
+</script>
+```
+
+Configure in `typescript`
+
+``` vue
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+import { VueAPICloud } from 'vue-apicloud-quickstart'
+@VueAPICloud
+@Component({ statusBar: 'transparent' })
+export default class Demo extends Vue {}
+</script>
+```
+
+```vue
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+import { VueAPICloud } from 'vue-apicloud-quickstart'
+@VueAPICloud
+@Component({ statusBar: '#007ACC' })
+export default class Demo extends Vue {}
+</script>
+```
+
 ## APICloud application configuration
 
 ::: tip
