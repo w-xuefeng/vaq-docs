@@ -79,11 +79,10 @@ this.$api.setStorage('username', username)
 
 详情请查看[网络请求](./network-request)
 
-## element.getRect()
+## element.getRect
 
-- `参数`: 无
 - `返回值`: `DOMRect`
-- `描述`: 方法返回元素的大小及其相对于视口的位置, 是 `Element.getBoundingClientRect()` 的封装。
+- `描述`: 返回元素的大小及其相对于视口的位置, 是 `Element.getBoundingClientRect()` 的封装。
 
 `DOMRect`:
 
@@ -101,19 +100,18 @@ this.$api.setStorage('username', username)
 用例:
 
 ``` js
-this.$api.dom('#id').getRect();
+this.$api.dom('#id').getRect;
 ```
 
-## element.computedStyle()
+## element.computedStyle
 
-- `参数`: 无
 - `返回值`: `CSSStyleDeclaration `
 - `描述`: 返回一个对象，该对象在应用活动样式表并解析这些值可能包含的任何基本计算后报告元素的所有CSS属性的值。私有的CSS属性值可以通过对象提供的 API 或通过简单地使用 CSS 属性名称进行索引来访问。是 `window.getComputedStyle(element)` 的封装。
 
 用例:
 
 ``` js
-this.$api.dom('#id').computedStyle();
+this.$api.dom('#id').computedStyle;
 ```
 
 

@@ -73,15 +73,15 @@ this.$api.setStorage('username', username)
 ```
 
 ## $req
+
 - `Description`: For network requests, `axios` is used for PC debugging, and `api.ajax()` method is used for WiFi debugging and formal packaging
 
 See [Network Request](./network-request) for details
 
-## element.getRect()
+## element.getRect
 
-- `Param`: `None`
 - `Return`: `DOMRect`
-- `Description`: The method returns the size of the element and its position relative to the viewport, and is an encapsulation of `Element.getBoundingClientRect()`.
+- `Description`: The property returns the size of the element and its position relative to the viewport, and is an encapsulation of `Element.getBoundingClientRect()`.
 
 `DOMRect`:
 
@@ -99,19 +99,18 @@ See [Network Request](./network-request) for details
 For example:
 
 ``` js
-this.$api.dom('#id').getRect();
+this.$api.dom('#id').getRect;
 ```
 
-## element.computedStyle()
+## element.computedStyle
 
-- `Param`: `None`
 - `Return`: `CSSStyleDeclaration `
 - `Description`: Returns an object that reports the values of all CSS properties of an element after applying the active style sheet and parsing any basic calculations that these values may contain. Private CSS property values can be accessed through the API provided by the object or by simply indexing using CSS property names. It is a wrapper for `window.getComputedStyle(element)`.
 
 For example:
 
 ``` js
-this.$api.dom('#id').computedStyle();
+this.$api.dom('#id').computedStyle;
 ```
 
 ## $page
