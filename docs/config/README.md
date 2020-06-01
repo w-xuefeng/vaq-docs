@@ -95,7 +95,7 @@ Is there an animation effect, only valid for iOS
 
 Examples:
 
-``` vue
+``` vue {4,5,6,7}
 <script>
 export default {
   name: 'set-status-bar-style-demo',
@@ -107,7 +107,7 @@ export default {
 </script>
 ```
 
-```vue
+```vue {4,5,6,7,8}
 <script>
 export default {
   name: 'set-status-bar-style-demo',
@@ -122,7 +122,7 @@ export default {
 
 Configure in `typescript`
 
-``` vue
+``` vue {6,7,8,9}
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import { VueAPICloud } from 'vue-apicloud-quickstart'
@@ -139,7 +139,7 @@ export default class Demo extends Vue {}
 
 Or directly configure `color`, the `style` will be automatically judged by `$isLightColor`
 
-``` vue
+``` vue {4}
 <script>
 export default {
   name: 'set-status-bar-style-demo',
@@ -148,7 +148,7 @@ export default {
 </script>
 ```
 
-```vue
+```vue {4}
 <script>
 export default {
   name: 'set-status-bar-style-demo',
@@ -159,7 +159,7 @@ export default {
 
 Configure in `typescript`
 
-``` vue
+``` vue {5}
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import { VueAPICloud } from 'vue-apicloud-quickstart'
@@ -169,7 +169,7 @@ export default class Demo extends Vue {}
 </script>
 ```
 
-```vue
+```vue {5}
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import { VueAPICloud } from 'vue-apicloud-quickstart'

@@ -680,7 +680,7 @@ this.$isLightColor('#000000')
 
 this.$isLightColor('rgb(255,255,255)')
 // true
-this.$isLightColor('rgba(0,0,0)')
+this.$isLightColor('rgb(0,0,0)')
 // false
 
 this.$isLightColor('rgba(255,255,255, 0.8)')
