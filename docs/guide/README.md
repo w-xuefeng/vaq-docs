@@ -18,3 +18,7 @@ Vue-APICloud-Quickstart consists of two parts:
 ## How It Works
 
 In fact, Vue-APICloud-Quickstart is based on [w-xuefeng/vue-cli-plugin-apicloud](https://github.com/w-xuefeng/vue-cli-plugin-apicloud). With the help of `Vue CLI` to modify the entry of webpack, as well as some other configurations, the file directory structure needed to develop a multi page application and build it into an apicloud platform using Vue is realized.
+
+## Learning exchange group
+
+<img src="/img/qrcode.jpg" width="200px" style="margin-top:30px;" alt="Learning exchange group">

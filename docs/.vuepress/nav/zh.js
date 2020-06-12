@@ -6,5 +6,9 @@ module.exports = [
   {
     text: '配置',
     link: '/zh/config/'
+  },
+  {
+    text: '视频教程',
+    link: '/zh/video/'
   }
 ]

@@ -6,5 +6,9 @@ module.exports = [
   {
     text: 'Config Reference',
     link: '/config/'
-  }
+  },
+  {
+    text: 'Video Tutorial',
+    link: '/video/'
+  },
 ]
