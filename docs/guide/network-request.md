@@ -93,6 +93,7 @@ export default {
   - **`options`**
     + `Type`: `object`
     + `Required`: `true`
+    + `Attention`: `Data`, `files`, `body`, `stream`, except `data` and `files` can be used at the same time, other parameters cannot be used at the same time
     + `Description`: Requested options, including the following items
 
 | Optional | Type | Required | Default | Description
@@ -100,6 +101,8 @@ export default {
 | url | string | true | undefined | Request address
 | data | object | false | undefined | the data to send
 | files | object | false | undefined | Submit files in form, support multiple file uploads (JSON objects), such as {"file": "path"}, also supports multiple files for the same field: {"file": ["path1", "path2"]} File path, support absolute path, and file path protocols such as fs: //, cache: //, box: //, etc. You can directly use the results returned by other end APIs, such as ret.data of api.getPicture callback, etc.
+| body | object/string | false | undefined | Submit data in plain text, and the body supports strings and JSON objects (to verify data integrity, you need to convert JSON objects into strings and then transfer them in). When submitting a JSON object, you need to set the `content-type` to the `application/json`
+| stream | string | false | undefined | Submit the file as a binary stream. Stream is a file path (string type), which supports absolute path and file path protocols such as `fs://`、`cache://`、`box://`, you can directly use the results returned by other APIs, such as `api.getPicture` callback `ret.data` etc.
 | method | string | false | 'get' | Request method, this value range is 'get'、'post'、'put'、'delete'、 'head'、 'options'、 'patch'
 | encode | boolean | false | true | Whether to encode the url. By default or passed true, Android will always encode the URL, while iOS will only encode when the URL is illegal (such as the presence of Chinese characters). If there are special characters in the url that need to be encoded, it is recommended to encode them in the js layer first, and then this parameter is passed false.
 | tag | string | false | `ajax-${new Date().getTime()}` | This field is used to pass the cancelAjax method to cancel the request. If this field is passed in, please ensure that the tag field of each ajax is unique

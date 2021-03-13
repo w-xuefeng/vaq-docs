@@ -93,6 +93,7 @@ export default {
   - **`options`**
     + `类型`: `object`
     + `是否必须`: 是
+    + `注意`：`data`, `files`, `body`, `stream` 之间，除了 `data` 和 `files` 可以同时使用，其它参数都不能同时使用。
     + `描述`: 请求的可选项，包括以下几项
 
 | 可选项 | 类型 | 是否必须 | 默认值 | 描述
@@ -100,6 +101,8 @@ export default {
 | url | string | true | undefined | 请求地址
 | data | object | false | undefined | 发送的数据
 | files | object | false | undefined | 以表单方式提交文件，支持多文件上传（JSON对象）,如 {"file": "path"}，也支持同一字段对应多文件：{"file":["path1","path2"]}。文件路径，支持绝对路径，以及fs://、cache://、box://等文件路径协议。可直接使用其他端 API 返回的结果，如 api.getPicture 回调的 ret.data 等.
+| body | object/string | false | undefined | 以纯文本的方式提交数据，body 支持字符串及 JSON 对象（若要校验数据完整性，需将 JSON 对象转换成字符串再传入）。提交 JSON 对象时，需设置`application/json` 类型的 `Content-Type` 头
+| stream | string | false | undefined | 以二进制流的方式提交文件。stream为文件路径（字符串类型），支持绝对路径，以及`fs://`、`cache://`、`box://` 等文件路径协议。可直接使用其他端API返回的结果，如 `api.getPicture` 回调的 `ret.data` 等
 | method | string | false | 'get' | 请求方式，取值范围 'get'、'post'、'put'、'delete'、 'head'、 'options'、 'patch'
 | encode | boolean | false | true | 是否对url进行编码。默认或传 true 时，Android 将始终对 url 编码，而 iOS 只有在 url 不合法（如存在中文字符）的时候才进行编码。如果url中有特殊字符需要编码的，建议先在 js 层进行编码，然后此参数传 false。
 | tag | string | false | `ajax-${new Date().getTime()}` | 该字段用于传给 cancelAjax 方法来取消请求，如果传入该字段，请保证各个 ajax 的 tag 字段唯一
